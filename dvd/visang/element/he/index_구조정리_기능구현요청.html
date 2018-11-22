@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/popup.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="../contents/common/js/data.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="background_img"></div>
+
+		<div id="header">
+			<ul class="top_main">
+				<li class="top_btn_01 popUp" data-popup="popLayer_01">차시별 수업</li>
+				<li class="top_btn_02">진도 바로가기</li>
+				<li class="top_btn_03">즐거운 수업</li>
+				<li class="top_btn_04">자료실</li>
+			</ul>
+			<div class="top_sub">
+				<li class="top_btn_shortcut">바로가기</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_manual">사용 설명서</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_update">업데이트</li>
+			</div>
+		</div>
+
+		<div id="container">
+			<ul class="middle_img">
+			</ul>
+			
+			<ul class="middle_menu">
+				<li class="page">
+					<div class="txt">페이지 이동</div>
+					<input type="text" class="cur" value="10" maxlength=3>
+					<div>/121</div>
+					<div class="go"></div>
+				</li>
+				<div class="Lesson">
+				<li id="Lesson01" class="detail" style="display:block">
+					<div class="title">Ⅰ. 나의 성장과 발달</div>
+					<ul class="list">
+						<li data-page="10">1. 나의 발달 특징과 발달의 개인차를 알아볼까요<span class="chk"></span></li>
+						<li data-page="14">2. 건강한 성적 발달을 위해 어떻게 생활해야 할까요.<span class="chk"></span></li>
+					</ul>
+				</li>
+				<!-- <li id="Lesson03" class="detail" style="display:none">
+					<div class="title">Ⅲ. 나의 안전한 생활 문화</div>
+					<ul class="list">
+						<li>1. 균형 잡힌 식사는 어떻게 해야 할까요</li>
+						<li>2. 다양한 식재료를 맛보고 올바른 식습관을 형성해 볼까요</li>
+						<li>3. 간식을 어떻게 선택해야 할까요</li>
+						<li data-page="52">4. 건강한 간식을 만들어 볼까요<span class="chk"></span></li>
+						<li>5. 옷의 기능과 때, 장소, 상황에 맞는 옷차림은 무엇일까요</li>
+						<li>6. 신체 발달, 건강, 안전을 고려한 옷차림을 실천해 볼까요</li>
+						<li>7. 생활 안전사고는 어떻게 예방할까요</li>
+					</ul>
+				</li> -->
+				</div>
+			</ul>
+			
+			<ul class="middle_list">
+				<li class="on">Ⅰ. 나의 성장과 발달<span class="chk"></span></li>
+				<li>Ⅱ. 생활 속 동식물과 창조</li>
+				<li>Ⅲ. 나의 안전한 생활 문화<span class="chk"></span></li>
+				<li>Ⅳ. 효율적인 수송 수단</li>
+				<li>Ⅴ. 나의 자립적인 생활 관리</li>
+				<li>Ⅵ. 나의 진로와 적응</li>
+			</ul>
+		</div>
+
+
+		<div class="popWrap">
+			<div id="popLayer_01" class="pop_container">
+				<div class="unit_list type1">
+					<div class="unit_list_btn"> <!-- 기능구현 unit_list_btn 클릭시 .unit_list_arrow on 클래스 추가 unit_over display:inline-block;  -->
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">대단원</div>
+						<div class="unit_list_txt">Ⅰ. 나의 성장과 발달</div>
+					</div>
+					<ul class="unit_over">
+						<li>Ⅰ. 나의 성장과 발달</li> 
+						<li>Ⅱ. 생활 속 동식물과 창조</li>
+						<li>Ⅲ. 나의 안전한 생활 문화</li>
+						<li>Ⅳ. 효율적인 수송 수단</li>
+						<li>Ⅴ. 나의 자립적인 생활 관리</li>
+						<li>Ⅵ. 나의 진로와 적응</li>
+					</ul>
+				</div>
+				
+				<div class="unit_list type2"> <!-- data.js에서 동적으로 불러오게 요청드립니다. -->
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">중단원</div>
+						<div class="unit_list_txt"></div>
+					</div>
+
+					<ul class="unit_over"></ul>
+				</div>
+
+				<div class="unit_list type3"> <!-- data.js에서 동적으로 불러오게 요청드립니다. -->
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">차시명</div>
+						<div class="unit_list_txt">1. 성장하는 몸과 마음을 건강하게</div> <!-- 기능 구현 클릭시 하단 unit_over display:inline-block; 으로 만들어 주세요. -->
+					</div>
+
+					<ul class="unit_over">
+						<li>1. 나의 발달 특징과 발달의 개인차를 알아볼까요</li>
+						<li>2. 건강한 성적 발달을 위해 어떻게 생활해야 할까요</li>
+					</ul>
+				</div>
+				
+				<div class="unit_content">
+					 <ul class="list_detail"></ul>
+				</div>
+				<button class="btnClose"></button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// 차시별 수업
+		$(".top_btn_01").on("click", function () {
+			$(".popWrap").addClass("show");
+		});
+
+		// 진도 바로가기
+		$(".top_btn_02").on("click", function () {
+			parent.viewer.openProgress();
+		});
+
+		// 즐거운 수업
+		$(".top_btn_03").on("click", function() {
+			window.open("../data/enjoy_study.pdf", "_blank");
+		});
+
+		// 자료실
+		$(".top_btn_04").on("click", function() {
+			window.open("../contents/common/popup/data/data.html", "");
+			// parent.viewer.openDataStorage();
+		});
+
+		// 비바샘 바로가기
+		$(".top_btn_shortcut ").on("click", function () {
+			window.open("http://www.vivasam.com/", "");
+		});
+
+		// 사용 설명서
+		$(".top_btn_manual").on("click", function() {
+			alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+		});
+
+		// 업데이트
+		$(".top_btn_update").on("click", function() {
+			alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+		});
+
+		// 페이지 이동
+		$(".go").on("click", function() {
+			var page = $(".cur").val();
+			parent.viewer.gotoPage(page);
+		});
+
+		// 페이지 입력 후 엔터 입력
+		$(".cur").on("keyup", function (e) {
+			if (e.keyCode === 13) {
+				$(".go").trigger("click");
+			}
+		});
+
+		// 숫자만 입력
+		$(".cur").on("keypress", function (e) {
+			var keycode = e.keyCode;
+
+			if (keycode < 47 || keycode > 57) {
+				return false;
+			}
+		});
+
+		// 숫자외 제거
+		$(".cur").on("keyup", function (e) {
+			var $this = $(this);
+			var inputVal = $this.val();
+
+			$this.val(inputVal.replace(/[^0-9]/gi, ""));
+
+			if (inputVal > 121) {
+				alert("존재하지 않는 페이지입니다.");
+				$this.val("");
+			}
+		});
+
+		// 소단원 선택
+		$(".list li").each(function (idx) {
+			var page;
+			
+			$(this).on("click", function () {
+				page = $(this).data("page");
+
+				if (page) {
+					parent.viewer.gotoPage(page);
+				} else {
+					alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+				}
+			});
+		});
+
+		// 팝업창 닫기
+		$(".popWrap .btnClose").on("click", function () {
+			$(".popWrap").removeClass("show");
+		});
+
+		// 단원 선택
+		$(".middle_list li").on("click", function() {
+			var list = $(this);
+			var menu = list.text();
+		});
+
+		var chapter = $(".unit_over li");
+		var unitCont = $(".unit_content .list_detail");
+		var data = DATA.listInfo;
+		
+		// 버튼 클릭시, arrow 에 on 클래스 추가
+		$(".unit_list_btn").on("click", function() {
+			var $this = $(this);
+			var $unitOver = $this.next(".unit_over");
+			var arrowLi = $this.find(".unit_list_arrow");
+
+			if (arrowLi.hasClass("on")) {
+				arrowLi.removeClass("on");
+				$unitOver.removeClass("show");
+			} else {
+				$(".unit_list_arrow.on").removeClass("on");
+				$(".unit_over").removeClass("show");
+
+				arrowLi.addClass("on");
+				$unitOver.addClass("show");
+			}
+		});
+
+		//리스트 클릭 시, 페이지 이동
+		chapter.on("click", changeChapter);
+
+		function changeChapter() {
+			var list = $(this);
+			var menuTxt = list.text();
+			var unitList = list.parents(".unit_list");
+			var unitTxt = unitList.find(".unit_list_txt");
+			var unitOver = unitList.find(".unit_over li");
+			var chapIdx, unitIdx;
+
+			unitList.find(".unit_over").removeClass("show");
+			unitList.find(".unit_list_arrow").removeClass("on");
+			unitTxt.text(menuTxt);
+
+			if (unitList.hasClass("type1")) {
+				unitOver.removeClass("on");
+				list.addClass("on");
+				chapIdx = unitOver.index(list);
+
+				setChapter(chapIdx, 0);
+			} else if (unitList.hasClass("type2")){
+				chapIdx = $(".unit_over li.on").index();
+				unitIdx = unitOver.index(list);
+				
+				setChapter(chapIdx, unitIdx);
+			}
+		}
+
+		function setChapter(idx, op) {
+			var chapter, unit, chart, section, sec, secTitle;
+			var chapTxt = $(".unit_list_txt").eq(op + 1);
+			var unitOver = $(".unit_over").eq(op + 1);
+			var title = "", content ="", firstSen = "";
+			var i = 0; j = 0, k = 0; 
+			var listNum = 0;
+
+			unitOver.find("li").remove();
+			unitCont.children().remove();
+			
+			for(; i < data.length; i++) {
+				if (idx === i){
+					chapter = data[i];
+					unit = chapter.unit;
+
+					if (op === 0) {
+						section = unit[0].section;
+						chapTxt.text("1. " + unit[0].title);
+						
+						if (unit) {
+							for (; j < unit.length; j++) {
+								chart = unit[j];
+								title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
+							}
+						}
+					} else {
+						section = unit[op].section;
+					}
+
+					if (section) {
+						for(; k < section.length; k++) {
+							sec = section[k];
+
+							if (k === 1) firstSen = "</ul></li>";
+
+							if (secTitle === sec.title) {
+								if (section[k + 1] && secTitle !== section[k + 1].title) content += "<li data-page='"+ sec.file +"'>" + sec.desc + "</li>";
+								else content += "<li data-page='"+ sec.file +"'>"+ sec.desc +"</li>";
+							} else {
+								content += firstSen + "<li><div class='unit_list_icon'>"+ sec.title +"</div><ul class='list_detail_txt'><li data-page='"+ sec.file +"'>" + sec.desc + "</li>";
+							}
+
+							secTitle = sec.title;
+						}
+					}
+				}
+			}
+			
+			unitCont.append(content);
+			unitOver.append(title);
+
+			unitOver.find("li").bind("click", changeChapter);
+			unitCont.find(".list_detail_txt li").bind("click", pageMove);
+		}
+		
+		function pageMove () {
+			page = $(this).attr("data-page");
+
+			if (page) {
+				$(".popWrap").removeClass("show");
+				parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
+			} else {
+				alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+			}
+		}
+		
+		function setScale() {
+			var targetEle = document.getElementById("wrap");
+			var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			hRatio = windowWidth / targetEle.clientWidth;
+			vRatio = windowHeight / targetEle.clientHeight;
+
+			setTransform(targetEle, hRatio, vRatio);
+			function setTransform(targetEle, hRatio, vRatio) {
+				targetEle.setAttribute("style", "-ms-transform: scale(" + hRatio + "," + vRatio + ");"
+					+ "-webkit-transform: scale(" + hRatio + "," + vRatio + ");" + "transform: scale(" + hRatio + "," + vRatio + ");"
+					+ "transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; -ms-transform-origin: 0% 0%;");
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			setScale();
+			setChapter(0, 0);
+			$(".unit_over li").eq(0).addClass("on");
+		});
+
+		window.addEventListener("resize", setScale, true);
+	</script>
+</body>
+
+</html>
