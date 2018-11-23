@@ -153,12 +153,12 @@ function initMain() {
     }
 
     function setChapter(idx, op) {
-        var chapter, unit, chart, section, sec, secTitle;
+        var chapter, unit, category, section, sec, secTitle;
         var chapTxt = $(".unit_list_txt").eq(1);
-        var title = "", content ="", firstSen = "";
+        var title = "", content ="", sen = "";
         var i = 0; j = 0, k = 0, listNum = 0; 
         var list = op;
-        var li, file, pageNum, event;
+        var li, file, pageNum, event, isMain;
 
         unitCont.children().remove();
         
@@ -173,16 +173,15 @@ function initMain() {
                     list.find("li").remove();
                     section = unit[0].section;
 
-                    if (unit) {
-                        for (; j < unit.length; j++) {
-                            chart = unit[j];
-                            title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
-                        }
-                    }
-
-                    list.append(title);
-                    
                     if (list.hasClass("list")) {
+                        if (unit) {
+                            for (; j < unit.length; j++) {
+                                category = unit[j];
+                                title += "<li>" + unit[j].title + "</li>";
+                            }
+                        }
+
+                        list.append(title);
                         list.find("li").each(function(k) {
                             li = $(this);
                             file = unit[k].section[0].file;
@@ -193,6 +192,13 @@ function initMain() {
                         event = pageMove;
                     } else {
                         chapTxt.text("1. " + unit[0].title);
+                        if (unit) {
+                            for (; j < unit.length; j++) {
+                                category = unit[j];
+                                title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
+                            }
+                        }
+                        list.append(title);
                         event = changeChapter;
                     }
 
@@ -203,13 +209,13 @@ function initMain() {
                     for(; k < section.length; k++) {
                         sec = section[k];
 
-                        if (k === 1) firstSen = "</ul></li>";
+                        if (k === 1) sen = "</ul></li>";
 
                         if (secTitle === sec.title) {
                             if (section[k + 1] && secTitle !== section[k + 1].title) content += "<li data-page='"+ sec.file +"'>" + sec.desc + "</li>";
                             else content += "<li data-page='"+ sec.file +"'>"+ sec.desc +"</li>";
                         } else {
-                            content += firstSen + "<li><div class='unit_list_icon'>"+ sec.title +"</div><ul class='list_detail_txt'><li data-page='"+ sec.file +"'>" + sec.desc + "</li>";
+                            content += sen + "<li><div class='unit_list_icon'>"+ sec.title +"</div><ul class='list_detail_txt'><li data-page='"+ sec.file +"'>" + sec.desc + "</li>";
                         }
 
                         secTitle = sec.title;

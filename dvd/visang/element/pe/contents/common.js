@@ -1,5 +1,6 @@
 'use strict';
 
+
 function initNav() {
     var $header = $('#header');
     var botNav = document.getElementById('botNav');
@@ -10,12 +11,12 @@ function initNav() {
     var listInfo = DATA.listInfo;
     var topNav = '';
     var sectionList = '';
-    var i = 0;
-    var j = 0;
+    var i = 0, j = 0, k = 0;
     var unitArr = listInfo[chapter - 1].unit;
     var unitLen = unitArr.length;
     var $btnPage, $btnData, $btnHome, $btnGold;
     var unit, sectionArr, sectionLen, section, sectionTitle, sectionDesc, prevSecTitle, nextSecTitle, file;
+    var subArr, sub;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
 
@@ -90,45 +91,49 @@ function initNav() {
     // 하단 내비게이션 생성
     for (; i < unitLen; i++) {
         unit = unitArr[i];
+        subArr = unit.sub;
+
         // 현재 unit 찾기
-
-        if ((page >= unit.page && i === unitLen - 1) || (page >= unit.page && page < unitArr[i + 1].page)) {
-            // console.log('unit title:', unit.title);
-            sectionArr = unit.section;
-            sectionLen = sectionArr.length;
-
-            for (j = 0; j < sectionLen; j++) {
-                // 학습 목차(navList) 및 각 section 버튼(navCenterBtn) 생성
-                section = sectionArr[j];
-                sectionTitle = section.title;
-                nextSecTitle = j + 1 < sectionLen ? sectionArr[j + 1].title : '';
-                sectionDesc = section.desc;
-                file = section.file;
-
-
-                // 현재 섹션에 대한 데이터 찾기
-                if (currFile === file) {
-                    currPopNum = j + 1;
-                    currSectionNum = j;
-                    currSecTitle = unit.section[j].title;
-                    currUnit = unit;
+        for (; j < subArr.length; j++){
+            sub = subArr[j];
+            
+            if ((page >= sub.page && i === subArr.length - 1) || (page >= sub.page && page < subArr[i + 1].page)) {
+                // console.log('unit title:', unit.title);
+                sectionArr = sub.section;
+                sectionLen = sectionArr.length;
+    
+                for (; k < sectionLen; k++) {
+                    // 학습 목차(navList) 및 각 section 버튼(navCenterBtn) 생성
+                    section = sectionArr[k];
+                    sectionTitle = section.title;
+                    nextSecTitle = k + 1 < sectionLen ? sectionArr[k + 1].title : '';
+                    sectionDesc = section.desc;
+                    file = section.file;
+    
+                    // 현재 섹션에 대한 데이터 찾기
+                    if (currFile === file) {
+                        currPopNum = k + 1;
+                        currSectionNum = k;
+                        currSecTitle = sub.section[k].title;
+                        currUnit = sub;
+                    }
+    
+                    // 동일한 섹션에 들어가는지 확인
+                    if (sectionTitle === prevSecTitle) {
+                        navList += '<li data-page="' + file + '">' + sectionDesc + '</li>';
+                    } else {
+                        navList += '<li><div class="list_title_wrap"><div class="list_icon"></div>' + sectionTitle + '</div>' +
+                            '<ul class="list_sub"><li data-page="' + file + '">' + sectionDesc + '</li>';
+    
+                        sectionList += '<li data-page="' + file + '">' + sectionTitle + '</li>';
+                    }
+    
+                    if (sectionTitle !== nextSecTitle) {
+                        navList += '</ul></li>';
+                    }
+    
+                    prevSecTitle = sectionTitle;
                 }
-
-                // 동일한 섹션에 들어가는지 확인
-                if (sectionTitle === prevSecTitle) {
-                    navList += '<li data-page="' + file + '">' + sectionDesc + '</li>';
-                } else {
-                    navList += '<li><div class="list_title_wrap"><div class="list_icon"></div>' + sectionTitle + '</div>' +
-                        '<ul class="list_sub"><li data-page="' + file + '">' + sectionDesc + '</li>';
-
-                    sectionList += '<li data-page="' + file + '">' + sectionTitle + '</li>';
-                }
-
-                if (sectionTitle !== nextSecTitle) {
-                    navList += '</ul></li>';
-                }
-
-                prevSecTitle = sectionTitle;
             }
         }
     }
@@ -275,7 +280,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ui.setScale();
     initNav();
     ui.clickBtnShow();
-    ui.initSlide();
+
+    try{
+        if(_initSlideFlag){
+            ui.initSlide();
+        }
+    }catch(e){
+        ui.initSlide();
+    }
+
     ui.initLbPop();
     ui.initTooltip();
     ui.initToast();
