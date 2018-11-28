@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ui_template.css">
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+
+<body>
+	<div id="popContainer" class="popReference">
+		<div class="popTitleContainer">
+			<h4 class="popTitleTxt">자료실</h4>
+			<button type="button" id="dataCloseBtn" class="btnClose" title="닫기"></button>
+		</div>
+
+		<div class="popCotentContainer">
+			<div class="scrollContent scroll_vertical">
+				<div class="scroll_detail">
+					<div class="top_wrap">
+						<h2 class="dp_title">단원별 자료</h2>
+						<div class="btn_wrap">
+							<div class="data_btn allBtn" title="전체 다운로드" data-target="reference_unit">전체 다운로드</div>
+							<div class="data_btn eachBtn" title="선택 다운로드" data-target="reference_unit">선택 다운로드</div>
+						</div>
+					</div>
+
+					<div class="reference_unit">
+						<ul class="unit_title">
+							<li>
+								<p class="txt">단원</p>
+							</li>
+							<li>
+								<p class="txt">교과서</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_book"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">교사용<br/>교과서</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_tbook"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">지도서</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_guide"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">개별<br/>활동지</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_eactive"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">감상<br/>활동지</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_apactive"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">악곡 요점<br/>정리</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_point"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">수업<br/>지도안</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_tguide"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">수행<br/>평가</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_test"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">음원</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_audio"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">동영상</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_video"/><span class="ico checkBox"></span></label>
+							</li>
+						</ul>
+						<div class="unit_outer">
+							<div class="unit_contents unitDown unit01" data-download="true"> <!-- 단원 다운로드 체크 여부 클래스 .unitDown 다운로드 완료 시 data-download="true"-->
+								<div class="unit_txt">
+									1. 음악,<br/><span class="pl"></span>꿈꾸는<br/><span class="pl"></span>첫걸음
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit01"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="1. 음악, 꿈꾸는 첫걸음_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="1. 음악, 꿈꾸는 첫걸음_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="1. 음악, 꿈꾸는 첫걸음_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="1. 음악, 꿈꾸는 첫걸음_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="1. 음악, 꿈꾸는 첫걸음_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="1. 음악, 꿈꾸는 첫걸음_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="1. 음악, 꿈꾸는 첫걸음_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="1. 음악, 꿈꾸는 첫걸음_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="1. 음악, 꿈꾸는 첫걸음_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="1. 음악, 꿈꾸는 첫걸음_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+							<div class="unit_contents unitDown unit02" data-download="false">
+								<div class="unit_txt">
+									2. 음악,<br/><span class="pl"></span>따뜻한 마음
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit02"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="2. 음악, 따뜻한 마음_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="2. 음악, 따뜻한 마음_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="2. 음악, 따뜻한 마음_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="2. 음악, 따뜻한 마음_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="2. 음악, 따뜻한 마음_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="2. 음악, 따뜻한 마음_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="2. 음악, 따뜻한 마음_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="2. 음악, 따뜻한 마음_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="2. 음악, 따뜻한 마음_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="2. 음악, 따뜻한 마음_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+							<div class="unit_contents unitDown unit03" data-download="false">
+								<div class="unit_txt">
+									3. 음악,<br/><span class="pl"></span>싱그러운<br/><span class="pl"></span>자연
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit03"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="3. 음악, 싱그러운 자연_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="3. 음악, 싱그러운 자연_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="3. 음악, 싱그러운 자연_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="3. 음악, 싱그러운 자연_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="3. 음악, 싱그러운 자연_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="3. 음악, 싱그러운 자연_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="3. 음악, 싱그러운 자연_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="3. 음악, 싱그러운 자연_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="3. 음악, 싱그러운 자연_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="3. 음악, 싱그러운 자연_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+							<div class="unit_contents unitDown unit04" data-download="false">
+								<div class="unit_txt">
+									4. 음악,<br/><span class="pl"></span>어우러지는<br/><span class="pl"></span>세상
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit04"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="4. 음악, 어우러지는 세상_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="4. 음악, 어우러지는 세상_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="4. 음악, 어우러지는 세상_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="4. 음악, 어우러지는 세상_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="4. 음악, 어우러지는 세상_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="4. 음악, 어우러지는 세상_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="4. 음악, 어우러지는 세상_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="4. 음악, 어우러지는 세상_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="4. 음악, 어우러지는 세상_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="4. 음악, 어우러지는 세상_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+							<div class="unit_contents unitDown unit05" data-download="false">
+								<div class="unit_txt">
+									5. 음악,<br/><span class="pl"></span>즐거운<br/><span class="pl"></span>도전
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit05"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="5. 음악, 즐거운 도전_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="5. 음악, 즐거운 도전_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="5. 음악, 즐거운 도전_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="5. 음악, 즐거운 도전_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="5. 음악, 즐거운 도전_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="5. 음악, 즐거운 도전_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="5. 음악, 즐거운 도전_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="5. 음악, 즐거운 도전_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="5. 음악, 즐거운 도전_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="5. 음악, 즐거운 도전_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+							<div class="unit_contents unitDown unit06" data-download="false">
+								<div class="unit_txt">
+									6. 음악, 행복을<br/><span class="pl"></span>향한 성장
+									<label class="chk_list" title="확인"><input type="checkbox" name="unit06"/><span class="ico checkBox"></span></label>
+								</div>
+								<ul class="unit_down_list">
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="6. 음악, 행복을 향한 성장_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="6. 음악, 행복을 향한 성장_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="6. 음악, 행복을 향한 성장_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_eactive" data-title="6. 음악, 행복을 향한 성장_개별 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_apactive" data-title="6. 음악, 행복을 향한 성장_감상 활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_point" data-title="6. 음악, 행복을 향한 성장_악곡 요점 정리" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="6. 음악, 행복을 향한 성장_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="6. 음악, 행복을 향한 성장_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_audio" data-title="6. 음악, 행복을 향한 성장_음원" data-file=""/><span class="ico downBtn mp3"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="6. 음악, 행복을 향한 성장_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="top_wrap">
+						<h2 class="dp_title">공통 자료</h2>
+						<div class="btn_wrap">
+							<div class="data_btn allBtn" title="전체 다운로드" data-target="reference_common">전체 다운로드</div>
+							<div class="data_btn eachBtn" title="선택 다운로드" data-target="reference_common">선택 다운로드</div>
+						</div>
+					</div>
+
+					<div class="reference_common ty1">
+						<ul class="common_title">
+							<li>
+								<p class="txt">연간 교수 • 학습<br/> 지도 계획</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_plan"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">교욱 과정</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_curriculum"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">성취 기준</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_achievement"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">신구 교육과정 비교</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_comparison"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">지도서 총론</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_introduction"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">지도서 부록</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_supplement"/><span class="ico checkBox"></span></label>
+							</li>							
+						</ul>
+						<ul class="common_contents">
+							<ul class="common_down_list">
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_plan" data-title="연간 교수 • 학습 지도 계획" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_curriculum" data-title="교욱 과정" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_achievement" data-title="성취 기준" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_comparison" data-title="신구 교육과정 비교" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_introduction" data-title="지도서 총론" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_supplement" data-title="지도서 부록" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+							</ul>
+						</ul>
+					</div>
+
+					<div class="reference_common ty2">
+						<ul class="common_title">
+							<li>
+								<p class="txt">교과서 악보</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_book_mn"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">반주 악보</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_accompaniment_mn"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">오선 노트</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_note"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">기초 이론 학습(국악)</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_theory_gugak"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">기초 이론 학습지(서양 음악)</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_theory_west"/><span class="ico checkBox"></span></label>
+							</li>							
+						</ul>
+						<ul class="common_contents">
+							<ul class="common_down_list">
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book_mn" data-title="교과서 악보" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_accompaniment_mn" data-title="반주 악보" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_note" data-title="오선 노트" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_theory_gugak" data-title="기초 이론 학습(국악)" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_theory_west" data-title="기초 이론 학습지(서양 음악)" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$("#dataCloseBtn").click(function(){
+		if(parent.viewer!=undefined && typeof parent.viewer.link!=="undefined")
+			viewer.link('close', '');
+		else
+			window.close();
+	});
+
+	/*$(".downBtn").click(function(){
+		alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.")
+	});*/
+
+	function setScale() {
+		console.log('call setScale');
+		var targetEle = document.getElementById('popContainer');
+		var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		hRatio = windowWidth / targetEle.clientWidth;
+		vRatio = windowHeight / targetEle.clientHeight;
+
+		setTransform(targetEle, hRatio, vRatio);
+		function setTransform(targetEle, hRatio, vRatio) {
+		  targetEle.setAttribute('style', '-ms-transform: scale(' + hRatio + ',' + vRatio + ');'
+			+ '-webkit-transform: scale(' + hRatio + ',' + vRatio + ');' + 'transform: scale(' + hRatio + ',' + vRatio + ');'
+			+ 'transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; -ms-transform-origin: 0% 0%;');
+		}
+	}
+
+	function initScroll() {
+		var scrollContEls = document.getElementsByClassName("scrollContent");
+		var scorllContLen = scrollContEls.length;
+		var axis = axis || "y";
+		var i;
+		
+		if(!scrollContEls.length) {
+			return;
+		}
+
+		for (i = 0; i < scorllContLen; i++) {
+			if (axis === "y") {
+				scrollContEls[i].classList.add("scroll_vertical");
+			} else {
+				scrollContEls[i].classList.add("scroll_horizontal");
+			}
+		}
+
+		$(".scrollContent").mCustomScrollbar({
+			axis: axis, // 스크롤 축
+			autoDraggerLength: false, // 스크롤바 사이즈 고정,
+			autoExpandScrollbar: false, // 스크롤바에 커서가 올라가거나 드래그시 자동 확장 미사용
+			scrollInertia: 0, // ms당 스크롤 애니메이션
+			mouseWheel: {
+				// scrollAmount: 1000 // 휠 스크롤 양(default: auto)
+			},
+			advanced: {
+				autoScrollOnFocus: false // 포커스시 자동 스크롤
+			},
+			live: "on",
+			liveSelector: ".scrollContent"
+		});
+	}
+
+	function disableCheckBox() {
+		var unitContents = $(".unit_contents");
+		var unitDownloadLi = $(".unit_down_list");
+
+		unitContents.each(function() {
+			var cont = $(this);
+			var isDownload = cont.data("download");
+			
+			if (!isDownload) {
+				cont.find(".downBtn").css("pointer-events", "none");
+				cont.find(".downBtn").prop("disabled", true);
+				cont.find("input").prop("disabled", true);
+			}
+		});
+	}
+
+	function selectCheckBox() {
+		var unitContents = $(".unit_contents");
+		var unitDownloadLi = $(".unit_down_list");
+		var unitTitle = $(".unit_title");
+
+		var rowCheckBox = $(".unit_txt").find(".checkBox");
+		var colCheckBox = $(".unit_title").find(".checkBox");
+		var allCheckBtn = unitDownloadLi.find(".downBtn");
+
+		var commonTitleBox = $(".common_title").find(".checkBox");
+		var commonContBox = $(".common_contents").find(".downBtn");
+
+		rowCheckBox.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var name = chkInput.attr("name");
+			var isCheck = !chkInput.prop("checked");
+			var unitCont, downloadLi, unitInput, isDown;
+			var isColCheck, colBox;
+
+			var checkAllBox = function(inp) {
+				inp.each(function() {
+					$(this).prop("checked", isCheck);
+				});
+			}
+
+			unitContents.each(function() {
+				unitCont = $(this);
+				isDown = unitCont.data("download");
+				
+				if (!isDown) return;
+
+				if (unitCont.hasClass(name)) {
+					downloadLi = unitCont.find(".unit_down_list");
+					unitInput = downloadLi.find("input");
+					checkAllBox(unitInput);
+				}
+			});
+			
+			if (!isCheck) {
+				colCheckBox.each(function() {
+					$(this).prev().prop("checked", false);
+				});
+			} else {
+				unitTitle.find("input").each(function() {
+					colBox = $(this);
+					name = colBox.attr("name");
+					isColCheck = true;
+
+					$("input[name='"+ name +"']").each(function() {
+						if (!$(this).parents(".unit_contents").data("download")) return;
+						if (!$(this).prop("checked")) isColCheck = false;
+					});
+
+					if (isColCheck) colBox.prop("checked", true);
+				});
+			}
+		});
+		
+		colCheckBox.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var name = chkInput.attr("name");
+			var isCheck = !chkInput.prop("checked");
+			var downloadLi, unitInput, unitCont, isDown;
+			var isRowCheck, rowBtn;
+
+			var checkAllBox = function(inp) {
+				inp.each(function() {
+					if ($(this).attr("name") === name) $(this).prop("checked", isCheck);
+				});
+			}
+
+			unitDownloadLi.each(function() {
+				downloadLi = $(this);
+				unitCont = downloadLi.parents(".unit_contents");
+				isDown = unitCont.data("download");
+
+				if (!isDown) return;
+				unitInput = downloadLi.find("input");
+				checkAllBox(unitInput);
+			});
+
+			if (!isCheck) {
+				rowCheckBox.each(function() {
+					$(this).prev().prop("checked", false);
+				});
+			} else {
+				unitDownloadLi.each(function() {
+					downloadLi = $(this);
+					unitInput = downloadLi.find("input");
+					rowBtn = downloadLi.prev(".unit_txt").find("input");
+					isRowCheck = true;
+
+					unitInput.each(function() {
+						if (!$(this).prop("checked")) isRowCheck = false;
+					});
+					
+					if (isRowCheck) rowBtn.prop("checked", true);
+				});
+			}
+		});
+
+		allCheckBtn.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var isCheck = !chkInput.prop("checked");
+			var name = chkInput.attr("name");
+			var downloadLi = chkBox.parents(".unit_down_list");
+			var unitTxt = downloadLi.prev();
+			var colChkBox = unitTitle.find("input[name='"+ name +"']");
+			var rowChkBox = unitTxt.find("input");
+			var isRowCheck = true, isColCheck = true;
+			var inp;
+
+			colChkBox.prop("checked", false);
+			rowChkBox.prop("checked", false);
+
+			setTimeout(function() {
+				$("input[name='"+ name +"']").each(function() {
+					inp = $(this);
+					
+					if (!inp.parents(".unit_contents").data("download")) return;
+					if (!inp.prop("checked")) isColCheck = false;
+					
+				});
+
+				downloadLi.find("input").each(function() {
+					if (!$(this).prop("checked")) isRowCheck = false
+				});
+				
+				if (isRowCheck) rowChkBox.prop("checked", true);
+				if (isColCheck) colChkBox.prop("checked", true);
+			}, 0);
+		});
+
+		commonTitleBox.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var isCheck = !chkInput.prop("checked");
+			var chkIdx = commonTitleBox.index(chkBox);
+			var contBox = commonContBox.eq(chkIdx);
+			
+			if (isCheck) contBox.prev("input").prop("checked", true);
+			else contBox.prev("input").prop("checked", false);
+		});
+
+		commonContBox.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var isCheck = !chkInput.prop("checked");
+			var chkIdx = commonContBox.index(chkBox);
+			var titleBox = commonTitleBox.eq(chkIdx);
+			
+			if (isCheck) titleBox.prev("input").prop("checked", true);
+			else titleBox.prev("input").prop("checked", false);
+		});
+	}
+
+	initScroll();
+	disableCheckBox();
+	selectCheckBox();
+	setScale();
+	window.addEventListener('resize', setScale, true);
+</script>
+
+</body>
+</html>

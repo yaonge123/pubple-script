@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ui_template.css">
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+
+<body>
+	<div id="popContainer" class="popReference">
+		<div class="popTitleContainer">
+			<h1 class="popTitleTxt">HIGH SCHOOL ENGLISH II <span class="sub">- 교수 · 학습 자료실</span></h1>
+			<div class="btnVoca" title="단어장"></div>
+			<div class="btnClose" title="닫기"></div>
+		</div>
+
+		<div class="popCotentContainer">
+			<div class="top_wrap">
+				<h2 class="dp_title">공통 자료</h2>
+				<div class="btn_wrap">
+					<div class="data_btn commonBtn" title="공통 자료 다운로드" data-target="reference_common">공통 자료 다운로드</div>
+				</div>
+			</div>
+
+			<div class="reference_common">
+				<ul class="common_title">
+					<li>
+						<p class="txt">교육과정</p>
+					</li>
+					<li>
+						<p class="txt">신구 교육과정 비교</p>
+					</li>
+					<li>
+						<p class="txt">성취 기준</p>
+					</li>
+					<li>
+						<p class="txt">지도서 총론</p>
+					</li>
+					<li>
+						<p class="txt">연간 교수 학습 계획</p>
+					</li>
+					<li>
+						<p class="txt">영문 수업 지도안</p>
+					</li>
+					<li>
+						<p class="txt">교실 영어</p>
+					</li>
+				</ul>
+				<ul class="common_contents">
+					<ul class="common_down_list">
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_2015" data-title="2015 개정 교육과정" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_comparison" data-title="신구 교육과정 비교" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_achievement" data-title="성취 기준" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_introduction" data-title="지도서 총론" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_plan" data-title="연간 교수 학습 계획" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_study" data-title="영문 수업 지도안" data-file=""/><span class="ico downBtn zip"></span></label></li>
+						<li><label class="chk_list" title="선택"><input type="checkbox" name="check_eng" data-title="교실 영어" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+					</ul>
+				</ul>
+			</div>
+
+			<div class="top_wrap">
+				<div class="lesson_menu">
+					<div class="dp_title on">수업 자료</div>
+					<div class="dp_title">평가 자료</div>
+					<div class="dp_title">멀티미디어자료</div>
+				</div>
+				<div class="btn_wrap">
+					<div class="data_btn allBtn" title="전체 다운로드" data-target="reference_unit">단원별 전체 다운로드</div>
+				</div>
+			</div>
+
+			<div class="reference_unit">
+				<div class="unit_title">
+					<div class="row">항목</div>
+					<div class="row">
+						<div class="sep">Lesson</div>
+						<div class="sep">
+							<ul class="unit_lesson">
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit01"/><span class="ico checkBox"></span></label>
+								</li>
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit02"/><span class="ico checkBox"></span></label>
+								</li>
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit03"/><span class="ico checkBox"></span></label>
+								</li>
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit04"/><span class="ico checkBox"></span></label>
+								</li>
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit05"/><span class="ico checkBox"></span></label>
+								</li>
+								<li>
+									<label class="chk_list" title="선택"><input type="checkbox" name="unit06"/><span class="ico checkBox"></span></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="unit_outer">
+					<div class="scrollContent scroll_vertical">
+						<div class="scroll_detail">
+
+							<div class="unit_list">
+								<div class="row" style="height: 160px; line-height: 160px;">교과서 자료</div>
+								<div class="row">
+									<div class="sep">Script</div>
+									<div class="sep">Reading</div>
+									<div class="sep">교과서 PDF</div>
+									<div class="sep">이미지</div>
+								</div>
+							</div>
+
+							<div class="unit_list">
+								<div class="row" style="height: 40px; line-height: 40px;">지도서 자료</div>
+								<div class="row">
+									<div class="sep">교사용 교과서 PDF</div>
+								</div>
+							</div>
+
+							<div class="unit_list">
+								<div class="row" style="height: 120px; line-height: 120px;">지도서 자료</div>
+								<div class="row">
+									<div class="sep">의소 PPT</div>
+									<div class="sep">문법 PPT</div>
+									<div class="sep">배경지식 PPT</div>
+								</div>
+							</div>
+
+							<div class="unit_list">
+								<div class="row" style="height: 240px; line-height: 240px;">지도서<br/>Worksheet</div>
+								<div class="row">
+									<div class="sep">Dictation Worksheet</div>
+									<div class="sep">Speaking Worksheet</div>
+									<div class="sep">Vocabulary Worksheet (Before Reading)</div>
+									<div class="sep">Further Question for Reading</div>
+									<div class="sep">Vocabulary Test</div>
+									<div class="sep">Grammar Worksheet</div>
+								</div>
+							</div>		
+
+							<div class="unit_list">
+								<div class="row" style="height: 40px; line-height: 40px;">평가 자료</div>
+								<div class="row">
+									<div class="sep">단원 평가</div>
+								</div>
+							</div>
+
+							<div class="unit_list">
+								<div class="row" style="height: 120px; line-height: 120px;">멀티미디어 자료</div>
+								<div class="row">
+									<div class="sep">교과서 MP3</div>
+									<div class="sep">Pre-lesson 동영상&script</div>
+									<div class="sep">Real Life 동영상</div>
+								</div>
+							</div>
+							
+							<div class="unit_contents">
+								<div class="unitDown unit01" data-download="true">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file=""/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file=""/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file=""/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file=""/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file=""/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+
+								<div class="unitDown unit02" data-download="false">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file="" disabled/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file="" disabled/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+
+								<div class="unitDown unit03" data-download="false">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file="" disabled/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file="" disabled/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+
+								<div class="unitDown unit04" data-download="false">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file="" disabled/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file="" disabled/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+
+								<div class="unitDown unit05" data-download="false">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file="" disabled/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file="" disabled/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+
+
+								<div class="unitDown unit06" data-download="false">
+									<ul class="unit_down_list">
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Script" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="이미지" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="교사용 교과서 PDF" data-file="" disabled/><span class="ico downBtn pdf"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="의소 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="문법 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="배경지식 PPT" data-file="" disabled/><span class="ico downBtn ppt"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Dictation Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_book" data-title="Speaking Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tbook" data-title="Vocabulary Worksheet (Before Reading)" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_guide" data-title="Further Question for Reading" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_ppt" data-title="Vocabulary Test" data-file="" disabled/><span class="ico downBtn ppt hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_tguide" data-title="Grammar Worksheet" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_active" data-title="단원 평가" data-file="" disabled/><span class="ico downBtn hwp"></span></label></li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_test" data-title="교과서 MP3" data-file="" disabled/><span class="ico downBtn folder"></span></label></li>
+										<li>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Pre-lesson 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label>
+											<label class="chk_list" title="선택"><input type="checkbox" name="check_video" data-title="Pre-lesson script" data-file="" disabled/><span class="ico downBtn hwp"></span></label>
+										</li>
+										<li><label class="chk_list" title="선택"><input type="checkbox" name="check_image" data-title="Real Life 동영상" data-file="" disabled/><span class="ico downBtn video"></span></label></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popCotentAlert">
+			<div class="alert_01 alert_bg">
+				<div class="alert_btn">
+					<div class="btnOpen" title="확인">확인</div>
+					<div class="btnDownload" title="다운로드">다운로드</div>
+					<div class="btnCancel" title="취소">취소</div>
+				</div>
+			</div>
+			<div class="alert_02 alert_bg">
+				<p>단원별 자료 전체를 다운로드하시겠습니까?</p>
+				<div class="alert_btn">
+					<div class="btnDownload" title="확인">확인</div>
+					<div class="btnCancel" title="취소">취소</div>
+				</div>
+			</div>
+			<div class="alert_03 alert_bg">
+				<p>선택된 단원의 자료를 모두 다운로드하시겠습니까?</p>
+				<div class="alert_btn">
+					<div class="btnDownload" title="확인">확인</div>
+					<div class="btnCancel" title="취소">취소</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$("#dataCloseBtn").click(function(){
+		if(parent.viewer!=undefined && typeof parent.viewer.link!=="undefined")
+			viewer.link('close', '');
+		else
+			window.close();
+	});
+
+
+	function setScale() {
+		console.log('call setScale');
+		var targetEle = document.getElementById('popContainer');
+		var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		hRatio = windowWidth / targetEle.clientWidth;
+		vRatio = windowHeight / targetEle.clientHeight;
+
+		setTransform(targetEle, hRatio, vRatio);
+		function setTransform(targetEle, hRatio, vRatio) {
+		  targetEle.setAttribute('style', '-ms-transform: scale(' + hRatio + ',' + vRatio + ');'
+			+ '-webkit-transform: scale(' + hRatio + ',' + vRatio + ');' + 'transform: scale(' + hRatio + ',' + vRatio + ');'
+			+ 'transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; -ms-transform-origin: 0% 0%;');
+		}
+	}
+
+
+	function initScroll() {
+		var scrollContEls = document.getElementsByClassName("scrollContent");
+		var scorllContLen = scrollContEls.length;
+		var axis = axis || "y";
+		var i;
+		
+		if(!scrollContEls.length) {
+			return;
+		}
+
+		for (i = 0; i < scorllContLen; i++) {
+			if (axis === "y") {
+				scrollContEls[i].classList.add("scroll_vertical");
+			} else {
+				scrollContEls[i].classList.add("scroll_horizontal");
+			}
+		}
+
+		$(".scrollContent").mCustomScrollbar({
+			axis: axis, // 스크롤 축
+			autoDraggerLength: false, // 스크롤바 사이즈 고정,
+			autoExpandScrollbar: false, // 스크롤바에 커서가 올라가거나 드래그시 자동 확장 미사용
+			scrollInertia: 0, // ms당 스크롤 애니메이션
+			mouseWheel: {
+				// scrollAmount: 1000 // 휠 스크롤 양(default: auto)
+			},
+			advanced: {
+				autoScrollOnFocus: false // 포커스시 자동 스크롤
+			},
+			live: "on",
+			liveSelector: ".scrollContent"
+		});
+	}
+
+	function disableCheckBox() {
+		var unitContents = $(".unitDown");
+		var unitLesson = $(".unit_lesson");
+		var colChkBox;
+
+		unitContents.each(function() {
+			var cont = $(this);
+			var isDownload = cont.data("download");
+			var unit = cont.attr("class").split(' ')[1];
+
+			if (!isDownload) {
+				colChkBox = unitLesson.find("input[name='"+ unit +"']");
+				colChkBox.prop("disabled", true);
+				colChkBox.next().css("pointer-events", "none");
+			}
+		});
+	}
+
+	function selectCheckBox() {
+		var unitContents = $(".unit_contents");
+		var unitDownloadLi = $(".unit_down_list");
+		var colCheckBox = $(".unit_title").find(".checkBox");
+		var allCheckBtn = unitDownloadLi.find(".downBtn");
+		var commonCheckBtn = $(".common_down_list").find(".downBtn");
+
+		var popupAlert = $(".popCotentAlert");
+		var alerts = popupAlert.find(".alert_bg");
+		var btnClose = popupAlert.find(".btnCancel");
+
+		colCheckBox.on("click", function() {
+			var chkBox = $(this);
+			var chkInput = chkBox.prev();
+			var name = chkInput.attr("name");
+			var isCheck = !chkInput.prop("checked");
+			var downloadLi, unitInput, unitCont, isDown;
+			var isRowCheck, rowBtn;
+
+			var checkAllBox = function(inp) {
+				inp.each(function() {
+					$(this).prop("checked", isCheck);
+				});
+			}
+
+			unitDownloadLi.each(function() {
+				downloadLi = $(this);
+				unitCont = downloadLi.parents(".unitDown");
+				isDown = unitCont.data("download");
+
+				if (!isDown) return;
+				unitInput = downloadLi.find("input");
+				checkAllBox(unitInput);
+			});
+
+			popupAlert.addClass("show");
+			popupAlert.find(".alert_03").addClass("show");
+		});
+
+		allCheckBtn.add(commonCheckBtn).on("click", function() {
+			var chkBox = $(this).prev("input");
+
+			if (chkBox.prop("disabled")) return;
+			popupAlert.addClass("show");
+			popupAlert.find(".alert_01").addClass("show");
+		});
+	}
+
+	function showDownloadAlert(){
+		var downloadBtn = $(".data_btn");
+		var popupAlert = $(".popCotentAlert");
+		var alerts = popupAlert.find(".alert_bg");
+		var btnOpen = popupAlert.find(".btnOpen");
+		var btnClose = popupAlert.find(".btnCancel");
+
+		var colCheckBox = $(".unit_title").find("input");
+		var allCheckBtn = $(".unit_down_list").find("input");
+		var commonCheckBtn = $(".common_down_list").find("input");
+
+		btnClose.on("click", function() {
+			popupAlert.removeClass("show");
+			alerts.removeClass("show");
+			colCheckBox.prop("checked", false);
+			allCheckBtn.prop("checked", false);
+			commonCheckBtn.prop("checked", false);
+		});
+
+		downloadBtn.on("click", function() {
+			var btn = $(this);
+			var target = btn.data("target");
+			
+			popupAlert.addClass("show");
+
+			if (btn.hasClass("commonBtn")) popupAlert.find(".alert_02").addClass("show");
+			else popupAlert.find(".alert_02").addClass("show");
+			
+		});
+	}
+
+	disableCheckBox();
+	selectCheckBox();
+	initScroll();
+	showDownloadAlert();
+	setScale();
+	window.addEventListener('resize', setScale, true);
+</script>
+
+</body>
+</html>
