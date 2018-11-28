@@ -8,8 +8,8 @@ function initMain() {
     var data = DATA.listInfo;
 
     setScale();
-    setChapter(0, $(".unit_over").eq(1));
-    setChapter(0, $(".detail .list"));
+    setChapter(0, "main");
+    setChapter(0, "type1");
     
     window.addEventListener("resize", setScale, true);
 
@@ -99,7 +99,7 @@ function initMain() {
         $(".middle_list li.on").removeClass("on");
         list.addClass("on");
         lesson.find(".title").text(lessonTitle);
-        setChapter(idx, lesson.find(".list"));
+        setChapter(idx, "main");
     });
 
     // 버튼 클릭시, arrow 에 on 클래스 추가
@@ -143,7 +143,7 @@ function initMain() {
             list.addClass("on");
             chapIdx = unitOver.index(list);
 
-            setChapter(chapIdx, $(".unit_over").eq(1));
+            setChapter(chapIdx, "type1");
         } else if (unitList.hasClass("type2")){
             chapIdx = $(".unit_over li.on").index();
             unitIdx = unitOver.index(list);
@@ -158,7 +158,7 @@ function initMain() {
         var title = "", content ="", sen = "";
         var i = 0; j = 0, k = 0, listNum = 0; 
         var list = op;
-        var li, file, pageNum, event, isMain;
+        var li, file, pageNum, event;
 
         unitCont.children().remove();
         
@@ -167,9 +167,10 @@ function initMain() {
                 chapter = data[i];
                 unit = chapter.unit;
 
-                if ($.isNumeric(op)) {
-                    section = unit[op].section;
-                } else {
+                if (op === "type1" || op === "main") {
+                    if (op === "main") list = $(".detail .list");
+                    else list = $(".unit_over").eq(1);
+                    
                     list.find("li").remove();
                     section = unit[0].section;
 
@@ -186,7 +187,10 @@ function initMain() {
                             file = unit[k].section[0].file;
                             pageNum = file.split("_")[1];
 
-                            li.attr("data-page", pageNum.substring(1));
+                            if (pageNum.charAt(0) === "0") pageNum = pageNum.substring(1);
+                            
+                            if (k === 0) $(".cur").val(pageNum);
+                            li.attr("data-page", pageNum);
                         });
                         event = pageMove;
                     } else {
@@ -201,6 +205,8 @@ function initMain() {
                     }
 
                     list.find("li").bind("click", event);
+                } else {
+                    section = unit[op].section;
                 }
 
                 if (section) {
@@ -232,6 +238,7 @@ function initMain() {
         if (page) {
             if ($.isNumeric(page)) {
                 parent.viewer.gotoPage(page);
+                
             } else {
                 $(".popWrap").removeClass("show");
                 parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
