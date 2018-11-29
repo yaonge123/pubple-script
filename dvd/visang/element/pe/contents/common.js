@@ -1,6 +1,5 @@
 'use strict';
 
-
 function initNav() {
     var $header = $('#header');
     var botNav = document.getElementById('botNav');
@@ -74,6 +73,7 @@ function initNav() {
 
     $btnHome.on('click', function () {
         parent.viewer.link('close', 'main');
+        //parent.viewer.syncEventGA("팝업","홈","초등학교 체육5");
     });
 
     $btnGold.on('click', function () {
@@ -83,6 +83,7 @@ function initNav() {
 
     $btnData.on('click', function () {
         window.open("../common/popup/data/data.html", "data");
+        //parent.viewer.syncEventGA("팝업","자료실","초등학교 체육5");
     });
 
     // 이북에서 열어 하단 내비게이션 생성하지 않는 팝업이 존재함
@@ -176,6 +177,7 @@ function initNav() {
 
         if (currSection === currSecTitle) {
             $currSectionEl.addClass('on');
+            //parent.viewer.syncPageViewGA("팝업+초등학교 체육5+"+fileInfoArr[1] +"_"+ currSection + ".html");
         }
     });
 

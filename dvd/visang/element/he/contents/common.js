@@ -18,7 +18,7 @@ function initNav() {
     var unit, sectionArr, sectionLen, section, sectionTitle, sectionDesc, prevSecTitle, nextSecTitle, file;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
-
+    
     var navList = '<div class="navList" style="display:none;">' +
         '<div class="nav_title_wrap">' +
         '<div class="nav_tit_icon"></div>' +
@@ -72,10 +72,12 @@ function initNav() {
 
     $btnHome.on('click', function () {
         parent.viewer.link('close', 'main');
+        //parent.viewer.syncEventGA("팝업","홈","초등학교 실과5");
     });
 
     $btnData.on('click', function () {
         window.open("../common/popup/data/data.html", "data");
+        //parent.viewer.syncEventGA("팝업","자료실","초등학교 실과5");
     });
 
     // 이북에서 열어 하단 내비게이션 생성하지 않는 팝업이 존재함
@@ -90,7 +92,7 @@ function initNav() {
             // console.log('unit title:', unit.title);
             sectionArr = unit.section;
             sectionLen = sectionArr.length;
-
+            
             for (j = 0; j < sectionLen; j++) {
                 // 학습 목차(navList) 및 각 section 버튼(navCenterBtn) 생성
                 section = sectionArr[j];
@@ -165,6 +167,7 @@ function initNav() {
 
         if (currSection === currSecTitle) {
             $currSectionEl.addClass('on');
+            //parent.viewer.syncPageViewGA("팝업+초등학교 실과5+"+fileInfoArr[1] +"_"+ currSection + ".html");
         }
     });
 
@@ -182,6 +185,7 @@ function initNav() {
     $navList = $('.navList');
     $('.nav_list_wrap').on('click', function () {
         $navList.toggle();
+        //parent.viewer.syncEventGA("팝업","목차","초등실과5");
     });
 
     // 학습 목차 섹션 선택시
@@ -294,3 +298,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("resize", PUBPLE.ui.setScale);
+

@@ -283,10 +283,12 @@ PUBPLE.modules = function() {
 
     $btnHome.on('click', function () {
       parent.viewer.link('close', 'main');
+      //parent.viewer.syncEventGA("팝업","홈","초등학교 음악5");
     });
 
     $btnData.on('click', function () {
       window.open("../common/popup/data/data.html", "data");
+      //parent.viewer.syncEventGA("팝업","자료실","초등학교 음악5");
     });
 
     // 하단 내비게이션 생성
@@ -374,6 +376,7 @@ PUBPLE.modules = function() {
 
       if (currSection === currSecTitle) {
         $currSectionEl.addClass('on');
+        //parent.viewer.syncPageViewGA("팝업+초등학교 음악5+"+fileInfoArr[1] +"_"+ currSection + ".html");
       }
     });
 
