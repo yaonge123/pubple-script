@@ -11,43 +11,50 @@ function initMain() {
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    
+    parent.viewer.syncPageViewGA("메인+초등체육5");
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
     $(".top_btn_01").on("click", function () {
         $(".popWrap").addClass("show");
+        parent.viewer.syncEventGA("메인","차시별 수업","초등체육5");
     });
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
         parent.viewer.openProgress();
+        parent.viewer.syncEventGA("메인","진도 바로가기","초등체육5");
     });
 
     // 즐거운 수업
     $(".top_btn_03").on("click", function() {
         window.open("../data/enjoy_study.pdf", "_blank");
+        parent.viewer.syncEventGA("메인","즐거운 수업","초등체육5");
     });
 
     // 자료실
     $(".top_btn_04").on("click", function() {
         window.open("../contents/common/popup/data/data.html", "");
+        parent.viewer.syncEventGA("메인","자료실","초등체육5");
         // parent.viewer.openDataStorage();
     });
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
         window.open("http://www.vivasam.com/", "");
+        parent.viewer.syncEventGA("메인","비바샘","초등체육5");
     });
 
     // 사용 설명서
     $(".top_btn_manual").on("click", function() {
         alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+        parent.viewer.syncEventGA("메인","사용 설명서","초등체육5");
     });
 
     // 업데이트
     $(".top_btn_update").on("click", function() {
         alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
+        parent.viewer.syncEventGA("메인","업데이트","초등체육5");
     });
 
     // 페이지 이동
@@ -96,10 +103,11 @@ function initMain() {
         var list = $(this);
         var lessonTitle = list.text();
         var idx = $(".middle_list li").index(list);
+        var subTitleArr = ["[성장과 건강 체력]", "[거리 도전]", "[필드형 경쟁]", "[민속 표현]", "[응급 처치와 빙상 · 설상 안전]"];
 
         $(".middle_list li.on").removeClass("on");
         list.addClass("on");
-        lesson.find(".title").text(lessonTitle);
+        lesson.find(".title").text(lessonTitle + " " + subTitleArr[idx]);
         setChapter(idx, "main");
     });
 
@@ -201,7 +209,9 @@ function initMain() {
                             file = unit[k].sub[0].section[0].file;
                             pageNum = file.split("_")[1];
 
-                            li.attr("data-page", pageNum.substring(1));
+                            if (pageNum.charAt(0) === "0") pageNum = pageNum.substring(1);
+                            
+                            li.attr("data-page", pageNum);
                         });
                         event = pageMove;
                     } else {
@@ -277,7 +287,7 @@ function initMain() {
         unitCont.find(".list_detail_txt li").bind("click", pageMove);
     }
 
-    function pageMove () {
+    function pageMove() {
         page = $(this).attr("data-page");
 
         if (page) {
@@ -285,7 +295,6 @@ function initMain() {
                 parent.viewer.gotoPage(page);
             } else {
                 $(".popWrap").removeClass("show");
-                location.href = "../contents/"+ page.split("_")[0] + "/" + page;
                 parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
             }
         }

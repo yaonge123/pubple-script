@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/popup.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="../contents/common/js/data.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="background_img"></div>
+
+		<div id="header">
+			<ul class="top_main">
+				<li class="top_btn_01 popUp" data-popup="popLayer_01">차시별 수업</li>
+				<li class="top_btn_02">진도 바로가기</li>
+				<li class="top_btn_03">즐거운 수업</li>
+				<li class="top_btn_04">자료실</li>
+			</ul>
+			<div class="top_sub">
+				<li class="top_btn_shortcut">바로가기</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_manual">사용 설명서</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_update">업데이트</li>
+			</div>
+		</div>
+
+		<div id="container">
+			<ul class="middle_img">
+			</ul>
+			
+			<ul class="middle_menu">
+				<li class="page">
+					<div class="txt">페이지 이동</div>
+					<input type="text" class="cur" value="10" maxlength=3>
+					<div>/121</div>
+					<div class="go"></div>
+				</li>
+				<li class="detail" style="display:block">
+					<div class="title">Ⅰ. 건강 [성장과 건강 체력]</div>
+					<ul class="list"></ul>
+				</li>
+			</ul>
+			
+			<ul class="middle_list">
+				<li class="on">Ⅰ. 건강</li>
+				<li>Ⅱ. 도전</li>
+				<li>Ⅲ. 경쟁</li>
+				<li>Ⅳ. 표현</li>
+				<li>Ⅴ. 안전</li>
+			</ul>
+		</div>
+
+
+		<div class="popWrap">
+			<div id="popLayer_01" class="pop_container">
+				<div class="unit_list type1">
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">대단원</div>
+						<div class="unit_list_txt">Ⅰ. 건강 [성장과 건강 체력]</div>
+					</div>
+					<ul class="unit_over">
+						<li class="on">1. 건강 [성장과 건강 체력]</li>
+						<li>2. 도전 [거리 도전]</li>
+						<li>3. 경쟁 [필드형 경쟁]</li>
+						<li>4. 표현 [민속 표현]</li>
+						<li>5. 안전 [응급 처치와 빙상 · 설상 안전]</li>
+					</ul>
+				</div>
+				
+				<div class="unit_list type2">
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">소단원</div>
+						<div class="unit_list_txt"></div>
+					</div>
+
+					<ul class="unit_over"></ul>
+				</div>
+
+				<div class="unit_list type3">
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">차시명</div>
+						<div class="unit_list_txt"></div>
+					</div>
+
+					<ul class="unit_over"></ul>
+				</div>
+				
+				<div class="unit_content">
+					<ul class="list_detail"></ul>
+				</div>
+				<button class="btnClose"></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
