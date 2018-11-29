@@ -16,7 +16,7 @@
 <body>
 	<div id="popContainer" class="popReference">
 		<div class="popTitleContainer">
-			<h1 class="popTitleTxt">자료실</h1>
+			<h4 class="popTitleTxt">자료실</h4>
 			<button type="button" id="dataCloseBtn" class="btnClose" title="닫기"></button>
 		</div>
 
@@ -41,147 +41,133 @@
 								<label class="chk_list" title="확인"><input type="checkbox" name="check_book"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
-								<p class="txt">교사용<br/>교과서</p>
-								<label class="chk_list" title="확인"><input type="checkbox" name="check_tbook"/><span class="ico checkBox"></span></label>
-							</li>
-							<li>
 								<p class="txt">지도서</p>
 								<label class="chk_list" title="확인"><input type="checkbox" name="check_guide"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
-								<p class="txt">수업 PPT</p>
-								<label class="chk_list" title="확인"><input type="checkbox" name="check_ppt"/><span class="ico checkBox"></span></label>
+								<p class="txt">수업<br/>PPT</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_ppt"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
 								<p class="txt">수업<br/>지도안</p>
-								<label class="chk_list" title="확인"><input type="checkbox" name="check_tguide"/><span class="ico checkBox"></span></label>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_tguide"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">점검표</p>
+								<label class="chk_list" title="확인"><input type="checkbox" name="check_check"/><span class="ico checkBox"></span></label>
+							</li>
+							<li>
+								<p class="txt">안전<br/>포켓북</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_sfbook"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
 								<p class="txt">활동지</p>
 								<label class="chk_list" title="확인"><input type="checkbox" name="check_active"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
-								<p class="txt">수행 평가</p>
-								<label class="chk_list" title="확인"><input type="checkbox" name="check_test"/><span class="ico checkBox"></span></label>
+								<p class="txt">수행<br/>평가</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_test"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
 								<p class="txt">동영상</p>
 								<label class="chk_list" title="확인"><input type="checkbox" name="check_video"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
-								<p class="txt">교과서<br/>이미지</p>
+								<p class="txt">이미지</p>
 								<label class="chk_list" title="확인"><input type="checkbox" name="check_image"/><span class="ico checkBox"></span></label>
 							</li>
 						</ul>
-
 						<div class="unit_outer">
-							<div class="unit_contents unitDown unit01" data-download="true"> <!-- 단원 다운로드 체크 여부 클래스 .unitDown 다운로드 완료 시 data-download="true"-->
+							<div class="unit_contents unitDown unit01" data-download="true">
 								<div class="unit_txt">
-									I. 나의 성장과<br/><span class="pl"></span>발달 
+									1. 건강
 									<label class="chk_list" title="확인"><input type="checkbox" name="unit01"/><span class="ico checkBox"></span></label>
 								</div>
 								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="I. 나의 성장과 발달_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="I. 나의 성장과 발달_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="I. 나의 성장과 발달_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="I. 나의 성장과 발달_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="I. 나의 성장과 발달_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="I. 나의 성장과 발달_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="I. 나의 성장과 발달_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="I. 나의 성장과 발달_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="I. 나의 성장과 발달_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="1. 건강_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="1. 건강_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="1. 건강_수업 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="1. 건강_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_check" data-title="1. 건강_점검표" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_sfbook" data-title="1. 건강_안전 포켓북" data-file=""/><span class="ico downBtn zip"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="1. 건강_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="1. 건강_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="1. 건강_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="1. 건강_이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
 								</ul>
 							</div>
-
-							<div class="unit_contents unitDown unit02" data-download="true">
+							<div class="unit_contents unitDown unit02" data-download="false">
 								<div class="unit_txt">
-									II. 생활 속<br/><span class="pl"></span>동식물과 창조
+									2. 도전
 									<label class="chk_list" title="확인"><input type="checkbox" name="unit02"/><span class="ico checkBox"></span></label>
 								</div>
 								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="II. 생활 속 동식물과 창조_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="II. 생활 속 동식물과 창조_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="II. 생활 속 동식물과 창조_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="II. 생활 속 동식물과 창조_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="II. 생활 속 동식물과 창조_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="II. 생활 속 동식물과 창조_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="II. 생활 속 동식물과 창조_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="II. 생활 속 동식물과 창조_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="II. 생활 속 동식물과 창조_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="2. 도전_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="2. 도전_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="2. 도전_수업 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="2. 도전_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_check" data-title="2. 도전_점검표" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_sfbook" data-title="2. 도전_안전 포켓북" data-file=""/><span class="ico downBtn zip"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="2. 도전_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="2. 도전_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="2. 도전_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="2. 도전_이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
 								</ul>
 							</div>
-
 							<div class="unit_contents unitDown unit03" data-download="false">
 								<div class="unit_txt">
-									III. 나의 안전한<br/><span class="pl"></span>생활 문화
+									3. 경쟁
 									<label class="chk_list" title="확인"><input type="checkbox" name="unit03"/><span class="ico checkBox"></span></label>
 								</div>
 								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="III. 나의 안전한 생활 문화_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="III. 나의 안전한 생활 문화_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="III. 나의 안전한 생활 문화_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="III. 나의 안전한 생활 문화_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="III. 나의 안전한 생활 문화_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="III. 나의 안전한 생활 문화_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="III. 나의 안전한 생활 문화_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="III. 나의 안전한 생활 문화_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="III. 나의 안전한 생활 문화_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="3. 경쟁_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="3. 경쟁_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="3. 경쟁_수업 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="3. 경쟁_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_check" data-title="3. 경쟁_점검표" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_sfbook" data-title="3. 경쟁_안전 포켓북" data-file=""/><span class="ico downBtn zip"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="3. 경쟁_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="3. 경쟁_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="3. 경쟁_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="3. 경쟁_이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
 								</ul>
 							</div>
-
 							<div class="unit_contents unitDown unit04" data-download="false">
 								<div class="unit_txt">
-									IV. 효율적인<br/><span class="pl"></span>수송 수단
+									4. 표현
 									<label class="chk_list" title="확인"><input type="checkbox" name="unit04"/><span class="ico checkBox"></span></label>
 								</div>
 								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="IV. 효율적인 수송 수단_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="IV. 효율적인 수송 수단_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="IV. 효율적인 수송 수단_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="IV. 효율적인 수송 수단_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="IV. 효율적인 수송 수단_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="IV. 효율적인 수송 수단_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="IV. 효율적인 수송 수단_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="IV. 효율적인 수송 수단_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="IV. 효율적인 수송 수단_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="4. 표현_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="4. 표현_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="4. 표현_수업 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="4. 표현_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_check" data-title="4. 표현_점검표" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_sfbook" data-title="4. 표현_안전 포켓북" data-file=""/><span class="ico downBtn zip"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="4. 표현_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="4. 표현_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="4. 표현_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="4. 표현_이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
 								</ul>
 							</div>
-
 							<div class="unit_contents unitDown unit05" data-download="false">
 								<div class="unit_txt">
-									V. 나의 자립적인<br/><span class="pl"></span>생활 관리
+									5. 안전
 									<label class="chk_list" title="확인"><input type="checkbox" name="unit05"/><span class="ico checkBox"></span></label>
 								</div>
 								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="V. 나의 자립적인 생활 관리_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="V. 나의 자립적인 생활 관리_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="V. 나의 자립적인 생활 관리_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="V. 나의 자립적인 생활 관리_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="V. 나의 자립적인 생활 관리_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="V. 나의 자립적인 생활 관리_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="V. 나의 자립적인 생활 관리_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="V. 나의 자립적인 생활 관리_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="V. 나의 자립적인 생활 관리_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="5. 안전_교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="5. 안전_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="5. 안전_수업 PPT" data-file=""/><span class="ico downBtn ppt"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="5. 안전_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_check" data-title="5. 안전_점검표" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_sfbook" data-title="5. 안전_안전 포켓북" data-file=""/><span class="ico downBtn zip"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="5. 안전_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="5. 안전_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="5. 안전_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
+									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="5. 안전_이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
 								</ul>
-							</div>
-
-							<div class="unit_contents unitDown unit06" data-download="false">
-								<div class="unit_txt">
-									VI. 나의 진로와<br/><span class="pl"></span>적응
-									<label class="chk_list" title="확인"><input type="checkbox" name="unit06"/><span class="ico checkBox"></span></label>
-								</div>
-								<ul class="unit_down_list">
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="VI. 나의 진로와 적응_교과서" data-file=""/><span class="ico downBtn pdf folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="VI. 나의 진로와 적응_교사용 교과서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="VI. 나의 진로와 적응_지도서" data-file=""/><span class="ico downBtn pdf"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="VI. 나의 진로와 적응_수업 PPT" data-file=""/><span class="ico downBtn ppt folder"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tguide" data-title="VI. 나의 진로와 적응_수업 지도안" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_active" data-title="VI. 나의 진로와 적응_활동지" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_test" data-title="VI. 나의 진로와 적응_수행 평가" data-file=""/><span class="ico downBtn hwp"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_video" data-title="VI. 나의 진로와 적응_동영상" data-file=""/><span class="ico downBtn video"></span></label></li>
-									<li><label class="chk_list" title="확인"><input type="checkbox" name="check_image" data-title="VI. 나의 진로와 적응_교과서 이미지" data-file=""/><span class="ico downBtn img"></span></label></li>
-								</ul>
-							</div>
+							</div>						
 						</div>
 					</div>
 
@@ -196,8 +182,8 @@
 					<div class="reference_common">
 						<ul class="common_title">
 							<li>
-								<p class="txt">2015 개정 실과<br/>교육과정</p>
-								<label class="chk_list" title="확인"><input type="checkbox" name="check_2015"/><span class="ico checkBox"></span></label>
+								<p class="txt">2015 개정 체육과<br/>교육과정</p>
+								<label class="chk_list row2" title="확인"><input type="checkbox" name="check_2015"/><span class="ico checkBox"></span></label>
 							</li>
 							<li>
 								<p class="txt">성취 기준</p>
@@ -218,7 +204,7 @@
 						</ul>
 						<ul class="common_contents">
 							<ul class="common_down_list">
-								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="2015 개정 실과 교육과정" data-file=""/><span class="ico downBtn pdf"></span></label></li>
+								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_book" data-title="2015 개정 체육과 교육과정" data-file=""/><span class="ico downBtn pdf"></span></label></li>
 								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_tbook" data-title="성취 기준" data-file=""/><span class="ico downBtn pdf"></span></label></li>
 								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_guide" data-title="신구 교육과정 비교" data-file=""/><span class="ico downBtn hwp"></span></label></li>
 								<li><label class="chk_list" title="확인"><input type="checkbox" name="check_ppt" data-title="연간 교수 학습 계획" data-file=""/><span class="ico downBtn hwp"></span></label></li>
@@ -238,7 +224,7 @@
 		disableCheckBox();
 		selectCheckBox();
 		//downloadFiles();
-		//parent.viewer.syncPageViewGA("자료실+초등학교 실과5");
+		//parent.viewer.syncPageViewGA("자료실+초등학교 체육5");
 		window.addEventListener('resize', setScale, true);
 
 		$("#dataCloseBtn").click(function(){
@@ -247,7 +233,6 @@
 			else
 				window.close();
 		});
-
 
 		function setScale() {
 			console.log('call setScale');
@@ -479,7 +464,7 @@
 		// 		var unit = $("."+ target);
 		// 		var allInput = unit.find("input");
 		// 		var inp, dataFile;
-		// 		var subject = "초등 실과 5학년", str = "";
+		// 		var subject = "초등 체육 5학년", str = "";
 
 		// 		if (target === "reference_common") str = "공통 자료";
 		// 		else str = "단원별 자료";

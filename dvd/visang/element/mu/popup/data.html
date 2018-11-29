@@ -510,11 +510,52 @@
 			else titleBox.prev("input").prop("checked", false);
 		});
 	}
+	
+	// function downloadFiles() {
+	// 	$(".data_btn.allBtn").on("click", function() {
+	// 		var target = $(this).data("target");
+	// 		var unit = $("."+ target);
+	// 		var allInput = unit.find("input");
+	// 		var inp, dataFile;
+	// 		var subject = "초등 체육 5학년", str = "";
+
+	// 		if (target === "reference_common") str = "공통 자료";
+	// 		else str = "단원별 자료";
+
+	// 		allInput.each(function() {
+	// 			inp = $(this);
+	// 			dataFile = inp.data("file");
+	// 			//다운로드 기능 추후 추가
+	// 			//parent.viewer.syncEventGA("자료실","파일 다운로드",subject +"+"+ str + "+전체 다운로드+"+ dataFile);
+	// 		});
+	// 	});
+
+	// 	$(".data_btn.eachBtn").on("click", function() {
+	// 		var target = $(this).data("target");
+	// 		var unit = $("."+ target);
+	// 		var allInput = unit.find("input");
+	// 		var inp, dataFile;
+	// 		var str = "";
+
+	// 		if (target === "reference_common") str = "공통 자료";
+	// 		else str = "단원별 자료";
+
+	// 		allInput.each(function() {
+	// 			inp = $(this);
+	// 			if (!inp.prop("checked")) return;
+
+	// 			dataFile = inp.data("file");
+	// 			//다운로드 기능 추후 추가
+	// 			//parent.viewer.syncEventGA("자료실","파일 다운로드",subject +"+"+ str + "+선택 다운로드+"+ dataFile);
+	// 		});
+	// 	});
+	// }
 
 	initScroll();
 	disableCheckBox();
 	selectCheckBox();
 	setScale();
+	//downloadFiles();
 	window.addEventListener('resize', setScale, true);
 </script>
 
