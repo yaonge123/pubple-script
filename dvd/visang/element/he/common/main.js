@@ -6,54 +6,55 @@ function initMain() {
     var chapter = $(".unit_over li");
     var unitCont = $(".unit_content .list_detail");
     var data = DATA.listInfo;
+    var subject = "초등학교 실과5";
 
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    parent.viewer.syncPageViewGA("메인+초등실과5");
+    parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
     $(".top_btn_01").on("click", function () {
         $(".popWrap").addClass("show");
-        parent.viewer.syncEventGA("메인","차시별 수업","초등실과5");
+        parent.viewer.syncEventGA("메인","차시별 수업",subject);
     });
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
         parent.viewer.openProgress();
-        parent.viewer.syncEventGA("메인","진도 바로가기","초등실과5");
+        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
     });
 
     // 즐거운 수업
     $(".top_btn_03").on("click", function() {
+        parent.viewer.syncEventGA("메인","즐거운 수업",subject);
         window.open("../data/enjoy_study.pdf", "_blank");
-        parent.viewer.syncEventGA("메인","즐거운 수업","초등실과5");
     });
 
     // 자료실
     $(".top_btn_04").on("click", function() {
+        parent.viewer.syncEventGA("메인","자료실",subject);
         window.open("../contents/common/popup/data/data.html", "");
-        parent.viewer.syncEventGA("메인","자료실","초등실과5");
         // parent.viewer.openDataStorage();
     });
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
+        parent.viewer.syncEventGA("메인","비바샘",subject);
         window.open("http://www.vivasam.com/", "");
-        parent.viewer.syncEventGA("메인","비바샘","초등실과5");
     });
 
     // 사용 설명서
     $(".top_btn_manual").on("click", function() {
-        alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
-        parent.viewer.syncEventGA("메인","사용 설명서","초등실과5");
+        $(".alertMessage").addClass("show");
+        parent.viewer.syncEventGA("메인","사용 설명서",subject);
     });
 
     // 업데이트
     $(".top_btn_update").on("click", function() {
-        alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
-        parent.viewer.syncEventGA("메인","업데이트","초등실과5");
+        $(".alertMessage").addClass("show");
+        parent.viewer.syncEventGA("메인","업데이트",subject);
     });
 
     // 페이지 이동
@@ -96,7 +97,11 @@ function initMain() {
         $(".popWrap").removeClass("show");
     });
 
-
+	// 임시 얼랏창 
+	$(".alertMessage").on("click", function () {
+		$(this).removeClass("show");
+	});
+    
     // 단원 선택
     $(".middle_list li").on("click", function() {
         var list = $(this);
@@ -239,12 +244,16 @@ function initMain() {
     }
 
     function pageMove () {
-        page = $(this).attr("data-page");
+        var page = $(this).attr("data-page");
 
         if (page) {
             if ($.isNumeric(page)) {
+                var clickLi = $(this);
+                var $detail = clickLi.parents(".detail");
+                var title = $detail.find(".title").text();
+
                 parent.viewer.gotoPage(page);
-                
+                parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
                 parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
