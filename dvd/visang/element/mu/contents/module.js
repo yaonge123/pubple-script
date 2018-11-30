@@ -251,7 +251,7 @@ PUBPLE.modules = function() {
     var unit, sectionArr, sectionLen, section, sectionTitle, sectionDesc, prevSecTitle, nextSecTitle, file;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
-    
+    var subject = "초등학교 음악5";
 
     // 상단 내비게이션 버튼 생성
     topNav += '<div class="nav_btn_wrap">' +
@@ -282,13 +282,13 @@ PUBPLE.modules = function() {
     });
 
     $btnHome.on('click', function () {
+      parent.viewer.syncEventGA("팝업","홈",subject);
       parent.viewer.link('close', 'main');
-      //parent.viewer.syncEventGA("팝업","홈","초등학교 음악5");
     });
 
     $btnData.on('click', function () {
+      parent.viewer.syncEventGA("팝업","자료실",subject);
       window.open("../common/popup/data/data.html", "data");
-      //parent.viewer.syncEventGA("팝업","자료실","초등학교 음악5");
     });
 
     // 하단 내비게이션 생성
@@ -376,7 +376,7 @@ PUBPLE.modules = function() {
 
       if (currSection === currSecTitle) {
         $currSectionEl.addClass('on');
-        //parent.viewer.syncPageViewGA("팝업+초등학교 음악5+"+fileInfoArr[1] +"_"+ currSection + ".html");
+        parent.viewer.syncPageViewGA("팝업+"+ subject +"+"+ fileInfoArr[1] +"_"+ currSection + ".html");
       }
     });
 
@@ -394,6 +394,7 @@ PUBPLE.modules = function() {
     $navList = $('.navList');
     $('.nav_list_wrap').on('click', function() {
       $navList.toggle();
+      parent.viewer.syncEventGA("팝업","단원 목차",subject);
     });
 
     // 학습 목차 섹션 선택시
@@ -1158,16 +1159,30 @@ PUBPLE.modules = function() {
     // 탭 클릭
     $noteNav.on('click', function(e) {
       var $target = $(e.target);
+      var $subBtn = $target.find('.mSubBtn');
 
       resetAllMediaPlayer();
 
-      $('.notesContent').children().hide();
-      $(this).children().removeClass('on');
+      if ($target.hasClass('noteNavSubMenu')) {
+        $('.noteNavSubMenu').removeClass('on');
+      } else if ($target.hasClass('mSubBtn')) {
+        //
+      } else {
+        $('.notesContent').children().hide();
+        $(this).children().removeClass('on');
+        $('.mSubBtn').removeClass('show');
+      }
       $target.addClass('on');
 
       if ($target.hasClass('showMusic')) {
         $('#notesDetail_Music').show();
         $viewDetailWrap.hide();
+        // 서브메뉴
+        if ($subBtn.length) {
+          $subBtn.addClass('show');
+          $subBtn.children().removeClass('on');
+          $subBtn.children().first().addClass("on");
+        }
       } else if ($target.hasClass('showNote')) {
         $('#notesDetail_Note').show();
         $viewDetailWrap.show();
