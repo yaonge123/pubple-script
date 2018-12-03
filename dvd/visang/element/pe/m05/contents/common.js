@@ -18,6 +18,7 @@ function initNav() {
     var subArr, sub;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
+    var subject = "초등학교 체육5";
 
     var navList = '<div class="navList" style="display:none;">' +
         '<div class="nav_title_wrap">' +
@@ -72,7 +73,7 @@ function initNav() {
     });
 
     $btnHome.on('click', function () {
-        parent.viewer.syncEventGA("팝업","홈","초등학교 체육5");
+        parent.viewer.syncEventGA("팝업","홈",subject);
         parent.viewer.link('close', 'main');
     });
 
@@ -82,7 +83,7 @@ function initNav() {
     });
 
     $btnData.on('click', function () {
-        parent.viewer.syncEventGA("팝업","자료실","초등학교 체육5");
+        parent.viewer.syncEventGA("팝업","자료실",subject);
         window.open("../common/popup/data/data.html", "data");
     });
 
