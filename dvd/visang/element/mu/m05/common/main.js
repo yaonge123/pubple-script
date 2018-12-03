@@ -6,10 +6,9 @@ function initMain() {
     var chapter = $(".unit_over li");
     var unitCont = $(".unit_content .list_detail");
     var data = DATA.listInfo;
-    var subject = "초등학교 실과5";
+    var subject = "초등학교 음악5";
 
     setScale();
-    setChapter(0, "main");
     setChapter(0, "type1");
     parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
@@ -22,8 +21,8 @@ function initMain() {
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
-        parent.viewer.openProgress();
         parent.viewer.syncEventGA("메인","진도 바로가기",subject);
+        parent.viewer.openProgress();
     });
 
     // 즐거운 수업
@@ -41,8 +40,8 @@ function initMain() {
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
-        parent.viewer.syncEventGA("메인","비바샘",subject);
         window.open("http://www.vivasam.com/", "");
+        parent.viewer.syncEventGA("메인","비바샘",subject);
     });
 
     // 사용 설명서
@@ -97,11 +96,7 @@ function initMain() {
         $(".popWrap").removeClass("show");
     });
 
-	// 임시 얼랏창 
-	$(".alertMessage").on("click", function () {
-		$(this).removeClass("show");
-	});
-    
+
     // 단원 선택
     $(".middle_list li").on("click", function() {
         var list = $(this);
@@ -110,8 +105,9 @@ function initMain() {
 
         $(".middle_list li.on").removeClass("on");
         list.addClass("on");
-        lesson.find(".title").text(lessonTitle);
-        setChapter(idx, "main");
+        lesson.hide();
+        lesson.eq(idx).find(".title").text(lessonTitle);
+        lesson.eq(idx).show();
     });
 
     // 버튼 클릭시, arrow 에 on 클래스 추가
@@ -168,9 +164,7 @@ function initMain() {
         var chapter, unit, section, sec, secTitle;
         var chapTxt = $(".unit_list_txt").eq(1);
         var title = "", content ="", sen = "";
-        var i = 0; j = 0, k = 0, listNum = 0; 
-        var list = op;
-        var li, file, pageNum, event;
+        var i = 0; j = 0, k = 0, listNum = 0;
 
         unitCont.children().remove();
         
@@ -179,43 +173,20 @@ function initMain() {
                 chapter = data[i];
                 unit = chapter.unit;
 
-                if (op === "type1" || op === "main") {
-                    if (op === "main") list = $(".detail .list");
-                    else list = $(".unit_over").eq(1);
+                if (op === "type1") {
+                    list = $(".unit_over").eq(1);
                     
                     list.find("li").remove();
                     section = unit[0].section;
 
-                    if (list.hasClass("list")) {
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                title += "<li>" + unit[j].title + "</li>";
-                            }
+                    chapTxt.text("1. " + unit[0].title);
+                    if (unit) {
+                        for (; j < unit.length; j++) {
+                            title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
                         }
-
-                        list.append(title);
-                        list.find("li").each(function(k) {
-                            li = $(this);
-                            file = unit[k].section[0].file;
-                            pageNum = file.split("_")[1];
-
-                            if (pageNum.charAt(0) === "0") pageNum = pageNum.substring(1);
-                            
-                            li.attr("data-page", pageNum);
-                        });
-                        event = pageMove;
-                    } else {
-                        chapTxt.text("1. " + unit[0].title);
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
-                            }
-                        }
-                        list.append(title);
-                        event = changeChapter;
                     }
-
-                    list.find("li").bind("click", event);
+                    list.append(title);
+                    list.find("li").bind("click", changeChapter);
                 } else {
                     section = unit[op].section;
                 }

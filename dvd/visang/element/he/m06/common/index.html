@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/popup.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/data.js"></script> <!-- 임시 초등실과5 data.js -->
+<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="background_img"></div>
+
+		<div id="header">
+			<ul class="top_main">
+				<li class="top_btn_01 popUp" data-popup="popLayer_01">차시별 수업</li>
+				<li class="top_btn_02">진도 바로가기</li>
+				<li class="top_btn_03">즐거운 수업</li>
+				<li class="top_btn_04">자료실</li>
+			</ul>
+			<div class="top_sub">
+				<li class="top_btn_shortcut">바로가기</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_manual">사용 설명서</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_update">
+					업데이트
+					<div class="update_icon updateLayer"></div> <!-- 업데이트 자료가 있을 경우 show -->
+				</li>
+			</div>
+		</div>
+
+		<div id="container">
+			<ul class="middle_img">
+				<div class="update_icon updateLayer"></div> <!-- 업데이트 자료가 있을 경우 show -->
+			</ul>
+			
+			<ul class="middle_menu">
+				<li class="page">
+					<div class="txt">페이지 이동</div>
+					<input type="text" class="cur" value="10" maxlength=3>
+					<div>/121</div>
+					<div class="go"></div>
+				</li>
+				<li id="Lesson01" class="detail" style="display:block">
+					<div class="title">Ⅰ. 나와 가족의 관계</div>
+					<ul class="list">
+						<!-- <li data-page="10">1. 가정생활은 왜 중요할까요</li>
+						<li data-page="12">2. 건강한 가정생활을 위해 무엇을 해야 할까요</li> -->
+					</ul>
+				</li>
+				<!-- <li id="Lesson02" class="detail" style="display:none">
+					<div class="title">Ⅱ. 지속 가능한 생활</div>
+					<ul class="list">
+						<li data-page="18">1. 친환경 농업은 왜 중요할까요</li>
+						<li data-page="20">2. 생활 속 농업 활동을 체험해 볼까요</li>
+					</ul>
+				</li>
+				<li id="Lesson03" class="detail" style="display:none">
+					<div class="title">Ⅲ. 안전한 생활 문화의 실천</div>
+					<ul class="list">
+						<li data-page="28">1. 기초 바느질을 익혀 간단한 수선을 해 볼까요</li>
+						<li data-page="34">2. 다양한 바느질 도구로 생활 소품을 만들어 볼까요</li>
+						<li data-page="40">3. 안전하고 위생적인 식사는 어떻게 선택해야 할까요</li>
+						<li data-page="46">4. 밥을 이용한 한 그릇 음식을 만들어 볼까요</li>
+					</ul>
+				</li>
+				<li id="Lesson04" class="detail" style="display:none">
+					<div class="title">Ⅳ. 소통하는 소프트웨어</div>
+					<ul class="list">
+						<li data-page="58">1. 소프트웨어는 우리에게 어떤 영향을 미칠까요</li>
+						<li data-page="60">2. 일상의 문제를 절차적으로 해결해 볼까요</li>
+						<li data-page="66">3. 프로그래밍 과정을 알아볼까요</li>
+						<li data-page="70">4. 자료를 입력하고 출력하는 프로그램을 만들어 볼까요</li>
+						<li data-page="72">5. 프로그래밍 과정을 알아볼까요</li>
+						<li data-page="78">6. 프로그래밍으로 문제를 해결해 볼까요</li>
+					</ul>
+				</li>
+				<li id="Lesson05" class="detail" style="display:none">
+					<div class="title">Ⅴ. 생활과 혁신</div>
+					<ul class="list">
+						<li data-page="86">1. 개인 정보와 지식 재산 보호를 어떻게 실천할까요</li>
+						<li data-page="90">2. 발명은 왜 중요할까요</li>
+						<li data-page="94">3. 창의적인 제품을 만들어 볼까요</li>
+						<li data-page="100">4. 생활 공간을 쾌적하게 관리해 볼까요</li>
+						<li data-page="104">5. 여러 센서를 작착한 로봇을 만들어 볼까요</li>
+					</ul>
+				</li>
+				<li id="Lesson06" class="detail" style="display:none">
+					<div class="title">Ⅵ. 가정생활과 생애 설계</div>
+					<ul class="list">
+						<li data-page="116">1. 가정일이란 무엇일까요</li>
+						<li data-page="118">2. 내가 할 수 있는 가정일을 찾아서 해 볼까요</li>
+					</ul>
+				</li> -->
+			</ul>
+			
+			<ul class="middle_list">
+				<li class="on">Ⅰ. 나와 가족의 관계</li>
+				<li>Ⅱ. 지속 가능한 생활</li>
+				<li>Ⅲ. 안전한 생활 문화의 실천</li>
+				<li>Ⅳ. 소통하는 소프트웨어</li>
+				<li>Ⅴ. 생활과 혁신</li>
+				<li>Ⅵ. 가정생활과 생애 설계</li>
+			</ul>
+		</div>
+
+
+		<div class="popWrap">
+			<div id="popLayer_01" class="pop_container">
+				<div class="unit_list type1">
+					<div class="unit_list_btn"> <!-- 기능구현 unit_list_btn 클릭시 .unit_list_arrow on 클래스 추가 unit_over display:inline-block;  -->
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">대단원</div>
+						<div class="unit_list_txt">Ⅰ. 나의 성장과 발달</div>
+					</div>
+					<ul class="unit_over">
+						<li class="on">Ⅰ. 나와 가족의 관계</li> <!-- 기능 구현 : 클릭시 하단 상단 unit_list_txt 텍스트 변경되며, unit_list type2 내용 변경 됩니다. -->
+						<li>Ⅱ. 지속 가능한 생활</li>
+						<li>Ⅲ. 안전한 생활 문화의 실천</li>
+						<li>Ⅳ. 소통하는 소프트웨어</li>
+						<li>Ⅴ. 생활과 혁신</li>
+						<li>Ⅵ. 가정생활과 생애 설계</li>
+					</ul>
+				</div>
+				
+				<div class="unit_list type2"> <!-- data.js에서 동적으로 불러오게 요청드립니다. -->
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">중단원</div>
+						<div class="unit_list_txt"></div> <!-- 기능 구현 클릭시 하단 unit_over display:inline-block; 으로 만들어 주세요. -->
+					</div>
+
+					<ul class="unit_over"></ul>
+				</div>
+
+				<!-- <div class="unit_list type3"> 
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">차시명</div>
+						<div class="unit_list_txt">1. 성장하는 몸과 마음을 건강하게</div>
+					</div>
+
+					<ul class="unit_over">
+					</ul>
+				</div> -->
+				
+				<div class="unit_content">
+					<ul class="list_detail"></ul>
+				</div>
+				<button class="btnClose"></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

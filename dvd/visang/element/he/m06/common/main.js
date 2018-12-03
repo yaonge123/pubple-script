@@ -6,12 +6,12 @@ function initMain() {
     var chapter = $(".unit_over li");
     var unitCont = $(".unit_content .list_detail");
     var data = DATA.listInfo;
-    var subject = "초등학교 음악5";
+    var subject = "초등학교 실과6";
 
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    parent.viewer.syncPageViewGA("메인+"+ subject);
+    //parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
@@ -22,8 +22,8 @@ function initMain() {
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
-        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
         parent.viewer.openProgress();
+        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
     });
 
     // 즐거운 수업
@@ -41,8 +41,8 @@ function initMain() {
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
-        window.open("http://www.vivasam.com/", "");
         parent.viewer.syncEventGA("메인","비바샘",subject);
+        window.open("http://www.vivasam.com/", "");
     });
 
     // 사용 설명서
@@ -97,7 +97,11 @@ function initMain() {
         $(".popWrap").removeClass("show");
     });
 
-
+	// 임시 얼랏창 
+	$(".alertMessage").on("click", function () {
+		$(this).removeClass("show");
+	});
+    
     // 단원 선택
     $(".middle_list li").on("click", function() {
         var list = $(this);
@@ -165,6 +169,7 @@ function initMain() {
         var chapTxt = $(".unit_list_txt").eq(1);
         var title = "", content ="", sen = "";
         var i = 0; j = 0, k = 0, listNum = 0; 
+        var list = op;
         var li, file, pageNum, event;
 
         unitCont.children().remove();
@@ -181,13 +186,13 @@ function initMain() {
                     list.find("li").remove();
                     section = unit[0].section;
 
-                    if (list.hasClass("list")) {
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                title += "<li>" + unit[j].title + "</li>";
-                            }
+                    if (unit) {
+                        for (; j < unit.length; j++) {
+                            title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
                         }
+                    }
 
+                    if (list.hasClass("list")) {
                         list.append(title);
                         list.find("li").each(function(k) {
                             li = $(this);
@@ -201,11 +206,6 @@ function initMain() {
                         event = pageMove;
                     } else {
                         chapTxt.text("1. " + unit[0].title);
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                title += "<li>" + (j + 1) + ". " + unit[j].title + "</li>";
-                            }
-                        }
                         list.append(title);
                         event = changeChapter;
                     }

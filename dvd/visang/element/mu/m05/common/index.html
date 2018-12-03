@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/popup.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/data.js"></script> <!-- 임시 data.js 수정 안됐음-->
+<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="background_img"></div>
+
+		<div id="header">
+			<ul class="top_main">
+				<li class="top_btn_01 popUp" data-popup="popLayer_01">차시별 수업</li>
+				<li class="top_btn_02">진도 바로가기</li>
+				<li class="top_btn_03">즐거운 수업</li>
+				<li class="top_btn_04">자료실</li>
+			</ul>
+			<div class="top_sub">
+				<li class="top_btn_shortcut">바로가기</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_manual">사용 설명서</li>
+				<li class="top_bar"></li>
+				<li class="top_btn_update">
+					업데이트
+					<div class="update_icon updateLayer"></div> <!-- 업데이트 자료가 있을 경우 show -->
+				</li>
+			</div>
+		</div>
+
+		<div id="container">
+			<div class="middle_img">
+				<div class="update_icon updateLayer"></div> <!-- 업데이트 자료가 있을 경우 show -->
+			</div>
+			
+			<ul class="middle_menu">
+				<li class="page">
+					<div class="txt">페이지 이동</div>
+					<input type="text" class="cur" value="10" maxlength=3>
+					<div>/121</div>
+					<div class="go"></div>
+				</li>
+				<li id="Lesson01" class="detail" style="display:block">
+					<div class="title">1. 음악, 꿈꾸는 첫걸음</div>
+					<ul class="list">
+						<li data-page="10">도롱뇽</li>
+						<li data-page="12">바늘귀 꿰기</li>
+						<li data-page="14">기차를 타고</li>
+						<li data-page="16">“광대” 중 ‘갤럽’ <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="18">음악, 내 마음의 표현 <span class="txt_color n2">| 생활화 |</span></li>
+					</ul>
+				</li>
+				<li id="Lesson02" class="detail" style="display:none">
+					<div class="title">2. 음악, 따뜻한 마음</div>
+					<ul class="list">
+						<li data-page="22">손뼉치기 4중주</li>
+						<li data-page="24">소리 친구 단소</li>
+						<li data-page="26">모두 모두 자란다</li>
+						<li data-page="28">도움소</li>
+						<li data-page="30">“합창 교향곡” 제4악장 <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="32">우리 가족 음악 구호 <span class="txt_color n2">| 생활화 |</span></li>
+						<li data-page="34"><span class="txt_color tit">음악, 다른 예술을 만나다 -</span> 살아 숨 쉬는 선, 우리 가락</li>
+					</ul>
+				</li>
+				<li id="Lesson03" class="detail" style="display:none">
+					<div class="title">3. 음악, 싱그러운 자연</div>
+					<ul class="list">
+						<li data-page="38">시원한 걸음</li>
+						<li data-page="40">풍년가</li>
+						<li data-page="42">엄마야 누나야</li>
+						<li data-page="44">“관악 영산회상” 중 ‘타령’ <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="46">음악 문화유산 해설가 <span class="txt_color n2">| 생활화 |</span></li>
+						<li data-page="48"><span class="txt_color tit">음악 자람 확인하기</span></li>
+					</ul>
+				</li>
+				<li id="Lesson4" class="detail" style="display:none">
+					<div class="title">4. 음악, 어우러지는 세상</div>
+					<ul class="list">
+						<li data-page="52">살리보나니·잠보 브와나</li>
+						<li data-page="54">파파야·카훌리 아쿠</li>
+						<li data-page="56">쾌지나칭칭나네</li>
+						<li data-page="58">아시아에서 만난 음악극 <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="60">노르웨이 춤곡 2번·헝가리 춤곡 5번 <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="62">공연장 가는 날 <span class="txt_color n2">| 생활화 |</li>
+					</ul>
+				</li>
+				<li id="Lesson05" class="detail" style="display:none">
+					<div class="title">5. 음악, 즐거운 도전</div>
+					<ul class="list">
+						<li data-page="66">즐거운 여행자</li>
+						<li data-page="68">장장 짚세기</li>
+						<li data-page="70">관악기 박물관 <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="72">아낌없이 주는 나무</li>
+						<li data-page="74">마음을 다독이는 우리 음악 <span class="txt_color n2">| 생활화 |</span></li>
+						<li data-page="76"><span class="txt_color tit">음악, 수학을 만나다 -</span> 음악에 흐르는 수학</li>
+					</ul>
+				</li>
+				<li id="Lesson06" class="detail" style="display:none">
+					<div class="title">6. 음악, 행복을 향한 성장</div>
+					<ul class="list">
+						<li data-page="80">별 보며 달 보며</li>
+						<li data-page="82">돈돌라리</li>
+						<li data-page="84">종묘 제례악 <span class="txt_color n1">| 감상 |</span></li>
+						<li data-page="86">노래로 세상을 아름답게</li>
+						<li data-page="88">우리가 만드는 평화 음악회 <span class="txt_color n2">| 생활화 |</span></li>
+						<li data-page="90"><span class="txt_color tit">음악 자람 확인하기</span></li>
+						<li data-page="93"><span class="txt_color n3">| 부록 |</span> 관악기 카드</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<ul class="middle_list">
+				<li class="on">1. 음악, 꿈꾸는 첫걸음</li>
+				<li>2. 음악, 따뜻한 마음</li>
+				<li>3. 음악, 싱그러운 자연</li>
+				<li>4. 음악, 어우러지는 세상</li>
+				<li>5. 음악, 즐거운 도전</li>
+				<li>6. 음악, 행복을 향한 성장</li>
+			</ul>
+		</div>
+
+
+		<div class="popWrap">
+			<div id="popLayer_01" class="pop_container">
+				<div class="unit_list type1">
+					<div class="unit_list_btn"> <!-- 기능구현 unit_list_btn 클릭시 .unit_list_arrow on 클래스 추가 unit_over display:inline-block;  -->
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">대단원</div>
+						<div class="unit_list_txt">1. 음악, 꿈꾸는 첫걸음</div>
+					</div>
+					<ul class="unit_over">
+						<!-- 기능 구현 : 클릭시 하단 상단 unit_list_txt 텍스트 변경되며, unit_list type2 내용 변경 됩니다. -->
+						<li class="on">1. 음악, 꿈꾸는 첫걸음</li>
+						<li>2. 음악, 따뜻한 마음</li>
+						<li>3. 음악, 싱그러운 자연</li>
+						<li>4. 음악, 어우러지는 세상</li>
+						<li>5. 음악, 즐거운 도전</li>
+						<li>6. 음악, 행복을 향한 성장</li>
+					</ul>
+				</div>
+				
+				<div class="unit_list type2"> <!-- data.js에서 동적으로 불러오게 요청드립니다. -->
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">중단원</div>
+						<div class="unit_list_txt"></div> <!-- 기능 구현 클릭시 하단 unit_over display:inline-block; 으로 만들어 주세요. -->
+					</div>
+
+					<ul class="unit_over"></ul>
+				</div>
+
+				<!-- <div class="unit_list type3">
+					<div class="unit_list_btn">
+						<div class="unit_list_arrow"></div>
+						<div class="unit_list_cate">차시명</div>
+						<div class="unit_list_txt">1. 성장하는 몸과 마음을 건강하게</div> 
+					</div>
+
+					<ul class="unit_over">
+						<li>1. 나의 발달 특징과 발달의 개인차를 알아볼까요</li>
+						<li>2. 건강한 성적 발달을 위해 어떻게 생활해야 할까요</li>
+					</ul>
+				</div> -->
+				
+				<div class="unit_content">
+					<ul class="list_detail"></ul>
+				</div>
+				<button class="btnClose"></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
