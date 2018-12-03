@@ -200,7 +200,7 @@ function initMain() {
                         for (; j < unit.length; j++) {
                             category = unit[j];
 
-                            if (j === 0) title += "<li class='on'>" + (j + 1) + ". " + category.title + "</li>";
+                            if (j === 0 && op === "type1") title += "<li class='on'>" + (j + 1) + ". " + category.title + "</li>";
                             else title += "<li>" + (j + 1) + ". " + category.title + "</li>";
                         }
                     }

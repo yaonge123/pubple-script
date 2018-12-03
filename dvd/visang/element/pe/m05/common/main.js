@@ -23,8 +23,8 @@ function initMain() {
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
-        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
         parent.viewer.openProgress();
+        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
     });
 
     // 즐거운 수업
@@ -42,8 +42,8 @@ function initMain() {
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
-        parent.viewer.syncEventGA("메인","비바샘",subject);
         window.open("http://www.vivasam.com/", "");
+        parent.viewer.syncEventGA("메인","비바샘",subject);
     });
 
     // 사용 설명서
@@ -196,14 +196,16 @@ function initMain() {
                     sub = unit[0].sub;
                     section = unit[0].sub[0].section;
 
-                    if (list.hasClass("list")) {
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                category = unit[j];
-                                title += "<li>" + category.title + "</li>";
-                            }
-                        }
+                    if (unit) {
+                        for (; j < unit.length; j++) {
+                            category = unit[j];
 
+                            if (j === 0 && op === "type1") title += "<li class='on'>" + (j + 1) + ". " + category.title + "</li>";
+                            else title += "<li>" + (j + 1) + ". " + category.title + "</li>";
+                        }
+                    }
+
+                    if (list.hasClass("list")) {
                         list.append(title);
                         list.find("li").each(function(k) {
                             li = $(this);
@@ -221,15 +223,6 @@ function initMain() {
 
                         chapTxt.text("1. " + unit[0].title);
                         subTxt.text("1. " + sub[0].title);
-
-                        if (unit) {
-                            for (; j < unit.length; j++) {
-                                category = unit[j];
-
-                                if (j === 0) title += "<li class='on'>" + (j + 1) + ". " + category.title + "</li>";
-                                else title += "<li>" + (j + 1) + ". " + category.title + "</li>";
-                            }
-                        }
 
                         if (sub) {
                             for(; k < sub.length; k++){
