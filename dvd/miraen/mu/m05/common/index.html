@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<title>초등 음악 5</title>
+
+<!-- 공통 -->
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../contents/common/js/jquery.scrollbar.min.js"></script>
+<!--<script type="text/javascript" src="../contents/common/js/module.js"></script>-->
+<!-- 공통 -->
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		document.getElementsByClassName("botIcon1")[0].parentNode.addEventListener("click", function(){
+			parent.viewer.openProgress();
+		});
+		
+		document.getElementsByClassName("botIcon2")[0].parentNode.addEventListener("click", function(){
+			parent.viewer.openPDF();
+		});
+		
+		document.getElementsByClassName("botIcon3")[0].parentNode.addEventListener("click", function(){
+			// if(parent.viewer!=undefined && typeof parent.viewer.link!=="undefined")
+			// 	parent.viewer.openDataStorage();
+			// else
+				window.open("../contents/common/popup/data/data.html", "");
+		});
+		
+		document.getElementsByClassName("botIcon4")[0].parentNode.addEventListener("click", function(){
+			// if(parent.viewer!=undefined && typeof parent.viewer.link!=="undefined")
+			// 	parent.viewer.openPlayInstrument();
+			// else
+				window.open("../contents/common/popup/music/music.html", "");
+
+			//alert("정식 서비스에서 제공됩니다.");
+
+		});
+		
+		document.getElementsByClassName("botIcon5")[0].parentNode.addEventListener("click", function(){
+			// if(parent.viewer!=undefined && typeof parent.viewer.link!=="undefined")
+			// 	parent.viewer.link("open", "http://www.m-teacher.co.kr");
+			// else
+				window.open("http://www.m-teacher.co.kr", "");
+		});
+
+		function pageMove(){
+			/*
+			var defaultPage = "4"
+			var defaultPopup = Number(defaultPage) + 4;
+
+			$('.pageMove').on('click', function() {
+				var pageNum = $(this).attr("data-page");
+
+				defaultPage = pageNum;
+				defaultPopup = Number(pageNum) + 4;
+
+				$(".pageMove").removeClass("on");
+				$(this).addClass("on");
+			});
+			*/
+
+			$('#ebook').on('click', function() { // e-Book 수업 
+				parent.viewer.gotoPage(4)
+			});
+
+			$('#ppt').on('click', function() { // 수업 PPT
+				parent.viewer.link("popup", "../contents/m05_01/m05_01_01/m05_01_01_01.html");
+			});
+		}
+		pageMove(); // 견본 이동
+
+		$(function() {
+			$('.nav3 ul li, .mainBottom ul li').hover(function() {
+				$(this).find('.iconOver').stop().animate({"opacity":"1"}, 300, function() {
+					$(this).parent().css('background-size', 0);
+				});
+			}, function() {
+				$(this).find('.iconOver').parent().css('background-size', '100%');
+				$(this).find('.iconOver').stop().animate({"opacity":"0"}, 300);
+			});
+		});
+
+		function setScale() {
+			var targetEle = document.getElementById("contentContainer");
+			var windowWidth = window.parent.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			var windowHeight = window.parent.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			hRatio = windowWidth / targetEle.clientWidth;
+			vRatio = windowHeight / targetEle.clientHeight;
+
+			setTransform(targetEle, hRatio, vRatio);
+			function setTransform(targetEle, hRatio, vRatio) {
+				targetEle.setAttribute("style", "-ms-transform: scale(" + hRatio + "," + vRatio + ");"
+					+ "-webkit-transform: scale(" + hRatio + "," + vRatio + ");" + "transform: scale(" + hRatio + "," + vRatio + ");"
+					+ "transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; -ms-transform-origin: 0% 0%;");
+			}
+		}
+
+		setScale();
+		window.addEventListener("resize", setScale, true);
+
+	});
+		
+</script>
+
+
+<script src="../../contents/common/js/newFn/music_fn.js"></script>
+ </head>
+
+<body>
+<section id="contentContainer" class="mainBg">
+	<div class="mainTitle">
+		<h1><img src="images/logo.png" alt="MiraeN"/></h1>
+		<h2>초등 음악 5</h2>
+	</div>
+	<article class="mainCont">
+	</article>
+	<article class="navWrap">
+		<nav class="nav1" id="chapterList">
+			<ul>
+				<li class="none">1. 마음을 열며</li>
+				<li class="none">2. 느낌을 담아</li>
+				<li class="none">3. 즐겁게 신나게</li>
+				<li class="none">4. 함께 나누며</li>
+				<li class="on">5. 부록<span class="sample">샘플</span></li>
+			</ul>
+		</nav>
+		<nav class="nav2" id="sectionList">
+			<div class="contentsScroll" data-scroll-size="400, 460">
+				<div class="scrollDetail">
+					<h2 class="none" data-page="4">1. 노래를 불러요</h2>
+<!-- 					<ul>
+						<li class="none"><span class="pageNum">78P</span> 조금 느린 아이</li>
+						<li class="none"><span class="pageNum">79P</span> 빗자루 여행</li>
+						<li class="none"><span class="pageNum">80P</span> 청어엮자</li>
+						<li class="none"><span class="pageNum">80P</span> 고사리꺾자</li>
+						<li class="none"><span class="pageNum">81P</span> 덕석몰자</li>
+						<li class="none"><span class="pageNum">81P</span> 문지기</li>
+						<li class="none"><span class="pageNum">81P</span> 꼬리따기</li>
+					</ul> -->
+					<h2 class="pageMove" data-page="4">2. 악기를 연주해요</h2>
+					<ul>
+						<li class="none"><span class="pageNum">82P</span> 앵무새 우는 언덕</li>
+						<li class="none"><span class="pageNum">83P</span> Summer</li>
+						<li class="pageMove on" data-page="8"><span class="pageNum">84P</span> 개구리 소리<span class="sample">샘플</span></li>
+						<li class="none"><span class="pageNum">85P</span> 도라지타령</li>
+						<li class="none"><span class="pageNum">86P</span> 종달새</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--<div class="mainScroll">
+			<div class="contentsScroll">
+			</div>
+		</div>-->
+		<nav class="nav3">
+			<ul>
+				<li id="ebook">
+					e-Book 수업
+					<div class="iconBook">
+						<div class="iconOver icB"></div>
+					</div>
+				</li>
+				<li id="ppt">
+					<span class="topTt">Smart</span>PPT 수업
+					<div class="iconTeach">
+						<div class="iconOver icT"></div>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</article>		
+	<!--오른쪽 동물들 이미지 -->
+	<!-- <div class="imgCloudRt mainImgs"></div>
+	<div class="imgLadybug mainImgs"></div>
+	<div class="imgLion mainImgs"></div>
+	<div class="imgMelody1 mainImgs"></div>
+	<div class="imgHorse mainImgs"></div>
+	<div class="imgRabbit mainImgs"></div> -->
+	<!--왼쪽 동물들 이미지 -->
+	<!-- <div class="imgGull mainImgs"></div>
+	<div class="imgMelody2 mainImgs"></div>
+	<div class="imgCloudLt mainImgs"></div>
+	<div class="imgClef mainImgs"></div>
+	<div class="imgChic mainImgs"></div>
+	<div class="imgDog mainImgs"></div>
+	<div class="imgCat mainImgs"></div> -->
+	<article class="mainBottom">
+		<ul>
+			<li>
+				<div class="botIcon1">
+					<div class="iconOver icB1"></div>
+				</div>
+				진도 보기
+			</li>
+			<li>
+				<div class="botIcon2">
+					<div class="iconOver icB2"></div>
+				</div>
+				교과서 PDF
+			</li>
+			<li>
+				<div class="botIcon3">
+					<div class="iconOver icB3"></div>
+				</div>
+				자료실
+			</li>
+			<li>
+				<div class="botIcon4">
+					<div class="iconOver icB4"></div>
+				</div>
+				악기 연주법
+			</li>
+			<li>
+				<div class="botIcon5">
+					<div class="iconOver icB5"></div>
+				</div>
+				엠티처
+			</li>
+		</ul>
+		<div class="euddeum"></div>
+		<div class="rico"></div>
+		<div class="doumi"></div>
+	</article>
+	<footer>
+		ⓒ MIRAE N CO. LTD.
+	</footer>
+</section>
+
+<!--<script type="text/javascript" src="js/main.js"></script>-->
+</body>
+</html>
