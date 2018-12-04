@@ -1306,6 +1306,7 @@ PUBPLE.ui = (function() {
                 redrawStoredLines();
 
                 currCtx.beginPath();
+                currCtx.lineCap="round";
                 currCtx.moveTo(startX, startY);
                 currCtx.lineTo(mouseX, mouseY);
                 currCtx.stroke();
@@ -1967,11 +1968,22 @@ PUBPLE.ui = (function() {
 
                 document.addEventListener(util.getEventType("move"), moveDragItem);
                 document.addEventListener(util.getEventType("up"), finishDragItem);
+                document.addEventListener(util.getEventType("out"), resetDrag);
+            }
+
+            var resetDrag = function(e) {
+                var from = e.relatedTarget || e.toElement;
+                
+                if (!from || from.nodeName === "HTML") {
+                    dragItem.style.top = "";
+                    dragItem.style.left = "";
+                    document.removeEventListener(util.getEventType("move"), moveDragItem);
+                    document.removeEventListener(util.getEventType("up"), finishDragItem);
+                }
             }
 
             var moveDragItem = function (e) {
                 // console.log('moveDragItem', );
-
                 if (util.isTouchDevice) {
                     touchObj = e.touches[0];
                     newPosX = posX - touchObj.clientX / self.scaleValue.x;
@@ -2006,18 +2018,14 @@ PUBPLE.ui = (function() {
                 var assessmentItem = dragItem.closest(".quizType");
                 var dropBoxes = assessmentItem.querySelectorAll(".drop_container .dropBox");
                 var dropBoxLen = dropBoxes.length;
-                var isSound = assessmentItem.getAttribute("data-sound");
-                var isAskTest = assessmentItem.closest(".askQuizContent:not(.my_goal)");
                 var isNoLimit = assessmentItem.getAttribute("data-nolimit");
                 isNoAns = assessmentItem.getAttribute("data-noans");
                 isCheck = assessmentItem.getAttribute("data-check");
                 
                 for (i = 0; i < dropBoxLen; i++) {
-                    // if (dropBoxes[i].getAttribute('data-drag') && !isNoAns) continue;
                     dropBoxes[i].style.zIndex = 11;
                 }
                 var target = document.elementFromPoint(changedX, changedY);
-                // console.log('target', target);
                 for (i = 0; i < dropBoxLen; i++) {
                     if (!dropBoxes[i].classList.contains("highest")) {
                         dropBoxes[i].style.zIndex = "auto";
@@ -2040,11 +2048,9 @@ PUBPLE.ui = (function() {
                 var isCorrect = false;
                 var i = 0, j = 0, k = 0, count = 0;
                 var efCheck = false;
-                var dragItemId, dropBox, ansMsg, showMsg, cloneDropBox;
-                //var dragBoxImg, dropBoxImg;
+                var dropBox, ansMsg, showMsg, cloneDropBox;
                 var dragIdx, dragBox, dragBoxNum;
                 var ansArr, ansArrLen;
-                //var ansMsgTxt, ansMsgid, dragItemMd;
 
                 // 현재 드래그한 요소 원래 자리로
                 var initDragItemPos = function () {
@@ -2064,9 +2070,6 @@ PUBPLE.ui = (function() {
                         target.setAttribute("data-drag", dragNum);
                         dragItem.setAttribute("data-drop", dropNum);
 
-                        if (isSound) {
-                            // playFeedSound(true);
-                        }
                         if (dropBoxLen === 1) { // dropBox가 하나인 경우
                             dropBox = dropBoxes[0];
                             showMsg = dropBox.querySelector(".ansMsg.show");
@@ -2100,14 +2103,15 @@ PUBPLE.ui = (function() {
                                 }
                             } else {
                                 if (target.classList.contains("dropBox")) {
-                                    target.querySelector(".ansMsg").classList.add("show");
-                                    dragItem.classList.add("blind");
+                                    showMsg = target.querySelector(".ansMsg.show");
+                                    if (!showMsg) {
+                                        target.querySelector(".ansMsg").classList.add("show");
+                                        dragItem.classList.add("blind");
+                                    }
                                 }
                             }
                             btnReplay.classList.add("show");
                         }
-
-                        
                     } else {
                         initDragItemPos();
                     }
@@ -2161,7 +2165,6 @@ PUBPLE.ui = (function() {
                             }
 
                             dragItem.classList.add("blind");
-                            if (isAskTest) btnCheck.classList.add("ready");
                         } else {
                             initDragItemPos();
                         }
@@ -2181,7 +2184,6 @@ PUBPLE.ui = (function() {
                             if (target.firstChild) {
                                 ansMsg = target.firstElementChild;
                                 ansMsg.classList.add("show");
-                                // console.log(ansMsg.querySelector(".ansBox[data-box='" + dragNum + "']"))
                                 ansMsg.querySelector(".ansBox[data-box='" + dragNum + "']").classList.add("show");
                             } else {
                                 ansMsg = target.closest(".quiz_drag").querySelector(".ansMsg:nth-child(" + dropNum + ")");
@@ -2208,7 +2210,7 @@ PUBPLE.ui = (function() {
                         self.playAudioEffect(efCheck);
                     }
                 }
-                //
+                
                 if (isClone) {
                     cloneClass.add("offDrag");
                     // 클론 위치 재설정
@@ -2233,25 +2235,21 @@ PUBPLE.ui = (function() {
             for (i = 0; i < btnCheckLen; i++) {
                 btnChecks[i].addEventListener("click", function () {
                     var qid = this.getAttribute("data-target");
-                    var quizMarking = this.closest(".quizMarking");
+                    //var quizMarking = this.closest(".quizMarking");
                     var assessmentItem = document.querySelector("[data-qid='" + qid + "']");
                     var dragBoxes = assessmentItem.querySelectorAll(".drag_container .dragBox");
                     var dropBoxes = assessmentItem.querySelectorAll(".drop_container .dropBox");
                     var dropBoxesLen = dropBoxes.length;
                     var isCheck = assessmentItem.getAttribute("data-check");
-                    var multi = assessmentItem.getAttribute("data-question-multi");
-                    var quizCheck = assessmentItem.querySelector(".quizCheck");
-                    var isAskTest = assessmentItem.closest(".askQuizContent:not(.my_goal)");
-                    var isCheckTest = assessmentItem.closest(".askQuizContent.my_goal");
-                    var isCorrect = "correct";
-                    var efCheck = true;
+                    //var multi = assessmentItem.getAttribute("data-question-multi");
+                    //var quizCheck = assessmentItem.querySelector(".quizCheck");
+                    //var isCorrect = "correct";
+                    //var efCheck = true;
                     var btnReplay = document.querySelector(".resetDrag[data-target='" + qid + "']");
                     var ansArr = assessmentItem.querySelector(".answerCorrect:not(.essayAnswer)").innerText.split("\/\/");
-                    var i, j, answers, ansMsgLen, dragBox;
+                    var i, j, answers, ansMsgLen;
 
-                    if (isAskTest && !this.classList.contains("ready")) {
-                        return;
-                    } else if (this.classList.contains("on")) {
+                    if (this.classList.contains("on")) {
                         this.nextElementSibling.click();
                         this.classList.remove("on");
                         btnReplay.classList.remove("show");
@@ -2276,10 +2274,6 @@ PUBPLE.ui = (function() {
                                     ansMsg.classList.remove("show");
                                 } else {
                                     dragBox = dropBox.querySelector(".dragBox");
-
-                                    if (isCheckTest && dragBox) {
-                                        dragBox.parentNode.removeChild(dragBox);
-                                    }
 
                                     if (ansMsgLen > 1 && ansArr[i] - 1 === idx) {
                                         dropBox.children[ansArr[i] - 1].classList.add("show");
@@ -2306,15 +2300,15 @@ PUBPLE.ui = (function() {
                         dragBox.classList.add("blind");
                     });
 
-                    if (isCheck) {
-                        if (multi) {
-                            if (efCheck) quizCheck.textContent = "true";
-                            else quizCheck.textContent = "false";
-                        } else {
-                            if (quizMarking) quizMarking.classList.add(isCorrect);
-                            // playFeedSound(efCheck);
-                        }
-                    }
+                    // if (isCheck) {
+                    //     if (multi) {
+                    //         if (efCheck) quizCheck.textContent = "true";
+                    //         else quizCheck.textContent = "false";
+                    //     } else {
+                    //         if (quizMarking) quizMarking.classList.add(isCorrect);
+                    //         // playFeedSound(efCheck);
+                    //     }
+                    // }
 
                     this.classList.add("on");
                     this.classList.add("blind");
@@ -2330,11 +2324,10 @@ PUBPLE.ui = (function() {
                     var quizMarking = this.closest(".quizMarking");
                     var qid = btnReplay.getAttribute("data-target");
                     var btnCheck = document.querySelector(".chkDragAns[data-target='" + qid + "']");
-                    var clones = document.querySelectorAll("[data-qid='" + qid + "'] .clone");
+                    //var clones = document.querySelectorAll("[data-qid='" + qid + "'] .clone");
                     var assessmentItem = document.querySelector("[data-qid='" + qid + "']");
                     var dropBoxes = assessmentItem.querySelectorAll(".drop_container .dropBox");
                     var dragBoxes = assessmentItem.querySelectorAll(".dragBox");
-                    var otherMsgs = assessmentItem.querySelector(".answer_container .ansMsg");
                     var isCheck = assessmentItem.getAttribute("data-check");
                     var isNoAns = assessmentItem.getAttribute("data-noans");
                     //var multi = assessmentItem.getAttribute("data-question-multi");
@@ -2361,15 +2354,20 @@ PUBPLE.ui = (function() {
                         }
                     });
 
-                    if (!isNoAns) {
+                    if (isNoAns) {
+                        [].forEach.call(dragBoxes, function (dragBox) {
+                            dragBox.style.top = "";
+                            dragBox.style.left = "";
+                        });
+                    }
+
+                    if (isCheck) {
                         for (var i = 0; i < dropBoxes.length; i++) {
                             dropBox = dropBoxes[i];
                             dropBox.removeAttribute("iscorrect");
                             dropBox.setAttribute("data-drag", "");
                         }
-                    }
 
-                    if (isCheck) {
                         if (quizMarking) quizMarking.classList.remove("correct", "wrong");
 
                         [].forEach.call(assessmentItem.querySelectorAll(".dropBox"), function (dropBox) {
