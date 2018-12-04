@@ -11,7 +11,7 @@ function initMain() {
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    parent.viewer.syncPageViewGA("메인+"+ subject);
+    //parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
@@ -252,7 +252,7 @@ function initMain() {
                 parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
-                parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
+                parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
             }
         }
     }

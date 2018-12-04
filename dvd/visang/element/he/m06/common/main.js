@@ -6,7 +6,7 @@ function initMain() {
     var chapter = $(".unit_over li");
     var unitCont = $(".unit_content .list_detail");
     var data = DATA.listInfo;
-    var subject = "초등학교 실과6";
+    var subject = "초등학교 실과5";
 
     setScale();
     setChapter(0, "main");
@@ -206,6 +206,7 @@ function initMain() {
                         event = pageMove;
                     } else {
                         chapTxt.text("1. " + unit[0].title);
+                        
                         list.append(title);
                         event = changeChapter;
                     }
@@ -246,12 +247,12 @@ function initMain() {
                 var clickLi = $(this);
                 var $detail = clickLi.parents(".detail");
                 var title = $detail.find(".title").text();
-
+                
                 parent.viewer.gotoPage(page);
                 parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
-                parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
+                parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
             }
         }
     }

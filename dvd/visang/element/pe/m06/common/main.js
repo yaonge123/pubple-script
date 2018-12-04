@@ -294,7 +294,7 @@ function initMain() {
                 parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
-                parent.viewer.link("popup", "../contents/"+ page.split("_")[0] + "/" + page);
+                parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
             }
         }
     }
