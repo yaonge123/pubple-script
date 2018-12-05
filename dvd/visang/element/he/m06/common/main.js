@@ -6,55 +6,55 @@ function initMain() {
     var chapter = $(".unit_over li");
     var unitCont = $(".unit_content .list_detail");
     var data = DATA.listInfo;
-    var subject = "초등학교 실과5";
+    var subject = "초등학교 실과6";
 
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    //parent.viewer.syncPageViewGA("메인+"+ subject);
+    if (parent.viewer) parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
     $(".top_btn_01").on("click", function () {
         $(".popWrap").addClass("show");
-        parent.viewer.syncEventGA("메인","차시별 수업",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","차시별 수업",subject);
     });
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
         parent.viewer.openProgress();
-        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","진도 바로가기",subject);
     });
 
     // 즐거운 수업
     $(".top_btn_03").on("click", function() {
-        parent.viewer.syncEventGA("메인","즐거운 수업",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","즐거운 수업",subject);
         window.open("../data/enjoy_study.pdf", "_blank");
     });
 
     // 자료실
     $(".top_btn_04").on("click", function() {
-        parent.viewer.syncEventGA("메인","자료실",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","자료실",subject);
         window.open("../contents/common/popup/data/data.html", "");
         // parent.viewer.openDataStorage();
     });
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
-        parent.viewer.syncEventGA("메인","비바샘",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","비바샘",subject);
         window.open("http://www.vivasam.com/", "");
     });
 
     // 사용 설명서
     $(".top_btn_manual").on("click", function() {
         $(".alertMessage").addClass("show");
-        parent.viewer.syncEventGA("메인","사용 설명서",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","사용 설명서",subject);
     });
 
     // 업데이트
     $(".top_btn_update").on("click", function() {
         $(".alertMessage").addClass("show");
-        parent.viewer.syncEventGA("메인","업데이트",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","업데이트",subject);
     });
 
     // 페이지 이동
@@ -133,7 +133,7 @@ function initMain() {
     });
 
     // 소단원 선택
-    $(".list li").on("click", pageMove);
+   //$(".list li").on("click", pageMove);
 
     //리스트 클릭 시, 페이지 이동
     chapter.on("click", changeChapter);
@@ -206,7 +206,6 @@ function initMain() {
                         event = pageMove;
                     } else {
                         chapTxt.text("1. " + unit[0].title);
-                        
                         list.append(title);
                         event = changeChapter;
                     }
@@ -247,12 +246,12 @@ function initMain() {
                 var clickLi = $(this);
                 var $detail = clickLi.parents(".detail");
                 var title = $detail.find(".title").text();
-                
-                parent.viewer.gotoPage(page);
-                parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
+
+                if (parent.viewer) parent.viewer.gotoPage(page);
+                if (parent.viewer) parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
-                parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
+                if (parent.viewer) parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
             }
         }
     }

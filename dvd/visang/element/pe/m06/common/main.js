@@ -12,49 +12,50 @@ function initMain() {
     setScale();
     setChapter(0, "main");
     setChapter(0, "type1");
-    parent.viewer.syncPageViewGA("메인+"+ subject);
+    update();
+    if (parent.viewer) parent.viewer.syncPageViewGA("메인+"+ subject);
     window.addEventListener("resize", setScale, true);
 
     // 차시별 수업
     $(".top_btn_01").on("click", function () {
         $(".popWrap").addClass("show");
-        parent.viewer.syncEventGA("메인","차시별 수업",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","차시별 수업",subject);
     });
 
     // 진도 바로가기
     $(".top_btn_02").on("click", function () {
-        parent.viewer.syncEventGA("메인","진도 바로가기",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","진도 바로가기",subject);
         parent.viewer.openProgress();
     });
 
     // 즐거운 수업
     $(".top_btn_03").on("click", function() {
         window.open("../data/enjoy_study.pdf", "_blank");
-        parent.viewer.syncEventGA("메인","즐거운 수업",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","즐거운 수업",subject);
     });
 
     // 자료실
     $(".top_btn_04").on("click", function() {
         window.open("../contents/common/popup/data/data.html", "");
-        parent.viewer.syncEventGA("메인","자료실",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","자료실",subject);
         parent.viewer.openDataStorage();
     });
 
     // 비바샘 바로가기
     $(".top_btn_shortcut ").on("click", function () {
-        parent.viewer.syncEventGA("메인","비바샘",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","비바샘",subject);
         window.open("http://www.vivasam.com/", "");
     });
 
     // 사용 설명서
     $(".top_btn_manual").on("click", function() {
-        parent.viewer.syncEventGA("메인","사용 설명서",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","사용 설명서",subject);
         alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
     });
 
     // 업데이트
     $(".top_btn_update").on("click", function() {
-        parent.viewer.syncEventGA("메인","업데이트",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("메인","업데이트",subject);
         alert("스마트 교수자료 정식 버전에서 제공할 예정입니다.");
     });
 
@@ -131,10 +132,31 @@ function initMain() {
     });
 
     // 소단원 선택
-    $(".list li").on("click", pageMove);
+    //$(".list li").on("click", pageMove);
 
     //리스트 클릭 시, 페이지 이동
     chapter.on("click", changeChapter);
+
+    function update() {
+        var updateStatus = parent.viewer ? Number(parent.viewer.getUpdateState()) : 1;
+        // var updateMSG = [
+        //     '업데이트 자료가 있습니다.',
+        //     '복사할 단원이 남아 있습니다.',
+        //     '최신 버전입니다.'
+        // ];
+
+        // $('.updateLayer p').html(updateMSG[updateStatus-1]);
+
+        if(updateStatus != 3) {
+            $(".updateLayer").one("click" , function () {
+                parent.viewer.serviceExecute();
+            });
+            $(".top_btn_update").one("click", function () {
+                parent.viewer.serviceExecute();
+            });
+            $(".updateLayer").addClass("show");
+        }
+    }
 
     function changeChapter() {
         var list = $(this);
@@ -290,11 +312,11 @@ function initMain() {
                 var $detail = clickLi.parents(".detail");
                 var title = $detail.find(".title").text();
 
-                parent.viewer.gotoPage(page);
-                parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
+                if (parent.viewer) parent.viewer.gotoPage(page);
+                if (parent.viewer) parent.viewer.syncEventGA("메인","목차",subject +"+"+ title +"+"+ clickLi.text());
             } else {
                 $(".popWrap").removeClass("show");
-                parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
+                if (parent.viewer) parent.viewer.link("popup", "../data/"+ page.split("_")[0].replace("m0","ch") + "/popup/" + page);
             }
         }
     }
