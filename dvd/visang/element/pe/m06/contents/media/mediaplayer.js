@@ -22,7 +22,7 @@ var dev_trace_detail = "none"; // 세부 추적할 미디어플레이어 ID
 // 파일 경로
 var PATH_MEDIA_AUDIO = (dev_mode == true) ? "../common/media/audio/" : "../common/media/audio/"; // 오디오 미디어 파일 경로
 //var PATH_MEDIA_AUDIO = "http://svn.pubple.com:8080/MediaPlayer/PlatformTest/common/media/audio/"; // 오디오 미디어 파일 경로
-var PATH_MEDIA_VIDEO = (dev_mode == true) ? "../ref_data/[비상교육] 초등_체육 5_동영상/" : "../ref_data/[비상교육] 초등_체육 5_동영상/"; // 비디오 미디어 파일 경로
+var PATH_MEDIA_VIDEO = (dev_mode == true) ? "../ref_data/[비상교육] 초등_체육 6_동영상/" : "../ref_data/[비상교육] 초등_체육 6_동영상/"; // 비디오 미디어 파일 경로
 //var PATH_IMAGE_POSTER = PATH_MEDIA_VIDEO + "thum/"; // 포스터 파일 경로
 
 // 강제 갱신

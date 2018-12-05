@@ -14,11 +14,11 @@ function initNav() {
     var j = 0;
     var unitArr = listInfo[chapter - 1].unit;
     var unitLen = unitArr.length;
-    var $btnPage, $btnData, $btnHome, $btnGold;
+    var $btnPage, $btnData, $btnHome;
     var unit, sectionArr, sectionLen, section, sectionTitle, sectionDesc, prevSecTitle, nextSecTitle, file;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
-    var subject = "초등학교 체육5";
+    var subject = "초등학교 실과6";
     var viewer = parent.viewer;
 
     var navList = '<div class="navList" style="display:none;">' +
@@ -65,7 +65,6 @@ function initNav() {
     $btnPage = $('.navBtnPage');
     $btnHome = $('.navBtnHome');
     $btnData = $('.navBtnData');
-    $btnGold = $('.gold_finish_btn');
 
     // 상단 내비 버튼 이벤트 바인딩
     $btnPage.on('click', function () {
@@ -76,11 +75,6 @@ function initNav() {
     $btnHome.on('click', function () {
         if (viewer) parent.viewer.syncEventGA("팝업","홈",subject);
         if (viewer) parent.viewer.link('close', 'main');
-    });
-
-    $btnGold.on('click', function () {
-        if (viewer) parent.viewer.link('close', '');
-        if (viewer) parent.viewer.gotoPage(page);
     });
 
     $btnData.on('click', function () {
@@ -177,8 +171,8 @@ function initNav() {
         var currSection = $currSectionEl.text();
 
         if (currSection === currSecTitle) {
-            $currSectionEl.addClass('on');
             if (viewer) parent.viewer.syncPageViewGA("팝업+"+ subject +"+"+ fileInfoArr[1] +"_"+ currSection + ".html");
+            $currSectionEl.addClass('on');
         }
     });
 
@@ -195,8 +189,8 @@ function initNav() {
     // 학습 목차 선택시
     $navList = $('.navList');
     $('.nav_list_wrap').on('click', function () {
-        if (viewer) parent.viewer.syncEventGA("팝업","단원 목차",subject);
         $navList.toggle();
+        if (viewer) parent.viewer.syncEventGA("팝업","단원 목차",subject);
     });
 
     // 학습 목차 섹션 선택시
@@ -223,6 +217,7 @@ function initNav() {
             $helperList.show();
         }
     });
+
     $helperList.on('click', function (e) {
         var $target = $(e.target);
         var helperName = $target.text();

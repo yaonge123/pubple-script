@@ -1,5 +1,6 @@
 'use strict';
 
+
 function initNav() {
     var $header = $('#header');
     var botNav = document.getElementById('botNav');
@@ -18,8 +19,7 @@ function initNav() {
     var unit, sectionArr, sectionLen, section, sectionTitle, sectionDesc, prevSecTitle, nextSecTitle, file;
     var currPopNum, currSectionNum, currSecTitle, currUnit;
     var $navList, $helperList;
-    var subject = "초등학교 체육5";
-    var viewer = parent.viewer;
+    var subject = "초등학교 체육6";
 
     var navList = '<div class="navList" style="display:none;">' +
         '<div class="nav_title_wrap">' +
@@ -69,23 +69,23 @@ function initNav() {
 
     // 상단 내비 버튼 이벤트 바인딩
     $btnPage.on('click', function () {
-        if (viewer) parent.viewer.link('close', '');
-        if (viewer) parent.viewer.gotoPage(page);
+        if (parent.viewer) parent.viewer.link('close', '');
+        if (parent.viewer) parent.viewer.gotoPage(page);
     });
 
     $btnHome.on('click', function () {
-        if (viewer) parent.viewer.syncEventGA("팝업","홈",subject);
-        if (viewer) parent.viewer.link('close', 'main');
+        if (parent.viewer) parent.viewer.syncEventGA("팝업","홈",subject);
+        if (parent.viewer) parent.viewer.link('close', 'main');
     });
 
     $btnGold.on('click', function () {
-        if (viewer) parent.viewer.link('close', '');
-        if (viewer) parent.viewer.gotoPage(page);
+        if (parent.viewer) parent.viewer.link('close', '');
+        if (parent.viewer) parent.viewer.gotoPage(page);
     });
 
     $btnData.on('click', function () {
-        if (viewer) parent.viewer.syncEventGA("팝업","자료실",subject);
-        if (viewer) parent.viewer.openDataStorage();
+        if (parent.viewer) parent.viewer.syncEventGA("팝업","자료실",subject);
+        if (parent.viewer) parent.viewer.openDataStorage();
     });
 
     // 이북에서 열어 하단 내비게이션 생성하지 않는 팝업이 존재함
@@ -111,7 +111,6 @@ function initNav() {
                 nextSecTitle = j + 1 < sectionLen ? sectionArr[j + 1].title : '';
                 sectionDesc = section.desc;
                 file = section.file;
-
 
                 // 현재 섹션에 대한 데이터 찾기
                 if (currFile === file) {
@@ -178,7 +177,7 @@ function initNav() {
 
         if (currSection === currSecTitle) {
             $currSectionEl.addClass('on');
-            if (viewer) parent.viewer.syncPageViewGA("팝업+"+ subject +"+"+ fileInfoArr[1] +"_"+ currSection + ".html");
+            if (parent.viewer) parent.viewer.syncPageViewGA("팝업+"+ subject +"+"+ fileInfoArr[1] +"_"+ currSection + ".html");
         }
     });
 
@@ -195,7 +194,7 @@ function initNav() {
     // 학습 목차 선택시
     $navList = $('.navList');
     $('.nav_list_wrap').on('click', function () {
-        if (viewer) parent.viewer.syncEventGA("팝업","단원 목차",subject);
+        if (parent.viewer) parent.viewer.syncEventGA("팝업","단원 목차",subject);
         $navList.toggle();
     });
 
@@ -230,19 +229,19 @@ function initNav() {
         if (!$target.hasClass('btnClose')) {
             switch (helperName) {
                 case "그리기":
-                    if (parent.viewer) parent.viewer.openDrawer();
+                    parent.viewer.openDrawer();
                     break;
                 case "타이머":
-                    window.open("../../../common/popup/timer/Timer/Timer.html", "timer");
+                    window.open("../common/popup/timer/Timer/Timer.html", "timer");
                     break;
                 case "스톱 워치":
-                    window.open("../../../common/popup/StopWatch/StopWatch/StopWatch.html", "stopWatch");
+                    window.open("../common/popup/StopWatch/StopWatch/StopWatch.html", "stopWatch");
                     break;
                 case "활동 시킴이":
-                    window.open("../../../common/popup/selection/Activity/Activity.html", "activity");
+                    window.open("../common/popup/selection/Activity/Activity.html", "activity");
                     break;
                 case "주목":
-                    window.open("../../../common/popup/Attention/Attention/Attention.html", "attention");
+                    window.open("../common/popup/Attention/Attention/Attention.html", "attention");
                     break;
                 default:
                     break;
@@ -284,7 +283,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ui.setScale();
     initNav();
     ui.clickBtnShow();
-    ui.initSlide();
+
+
+
+    try{
+        if(_initSlideFlag){
+            ui.initSlide();
+        }
+    }catch(e){
+        ui.initSlide();
+    }
+
     ui.initLbPop();
     ui.initTooltip();
     ui.initToast();
