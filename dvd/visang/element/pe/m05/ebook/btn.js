@@ -7,8 +7,8 @@ $(document).ready(function() {
 		var pageinfo = this.id.split("_");
 		var btnChap = pageinfo[0].substring(2);
 		var pageNum = pageinfo[1];
-		var i = 0, j = 0, k = 0, n = 0;
-		var chapter, unit, sub, section, file, title;
+		var i = 0, j = 0, k = 0;
+		var chapter, unit, section, file, title;
 
 		for(; i < data.length; i++){
 			if (btnChap - 1 === i) {
@@ -16,19 +16,16 @@ $(document).ready(function() {
 				unit = chapter.unit;
 
 				for (; j < unit.length; j++) {
-					sub = unit[j].sub;
-					for (; k < sub.length; k++){
-						section = sub[k].section;
-						n = 0;
-						
-						for (; n < section.length; n++) {
-							file = section[n].file;
-							title = section[n].title;
-	
-							if (file === page) {
-								parent.viewer.syncPageViewGA("팝업+초등학교 체육5+" + pageNum + "_" + title + ".html");
-								return;
-							}
+					section = unit[j].section;
+					k = 0;
+
+					for (; k < section.length; k++) {
+						file = section[k].file;
+						title = section[k].title;
+
+						if (file === page) {
+							parent.viewer.syncPageViewGA("팝업+초등학교 체육5+" + pageNum + "_" + title + ".html");
+							return;
 						}
 					}
 				}
